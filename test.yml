@@ -1,13 +1,3 @@
 ---
-- name: Send configuration commands to IOS
-  ansible.netcommon.telnet:
-    user: ansible
-    password: go
-    login_prompt: 'Username: '
- 
-- name: Run show commands
-  ansible.netcommon.telnet:
-    user: ansible 
-    password: go
-    login_prompt: 'Username: '
-   
+- TEST TEST TEST
+  
