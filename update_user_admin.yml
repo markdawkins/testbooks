@@ -1,0 +1,12 @@
+---
+- name: Change admin users    
+  hosts: all
+  connection: local
+  tasks:
+    - name: Remove users and configure Admin 
+      ios_user:
+        configured_password: 'new_admin_password'
+        name: admin
+        purge: true
+        state: present
+        privilege: 15

@@ -1,0 +1,18 @@
+---
+- name: Remove Radius Server 
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: remove radius server from config 
+      ios_config:
+          lines: no radius server SERVER_NAME_HERE          
+
+    - name: remove client server and key 
+      ios_config:
+        lines: no client 1.1.1.1 server-key 
+        parents: aaa server radius dynamic-author
+        
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified

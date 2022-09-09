@@ -1,0 +1,15 @@
+---
+- name: add new admin  users    
+  hosts: all
+  connection: local
+  tasks:
+    - name: Add new admin user 
+      ios_user:
+        configured_password: "{{ global_pass }}"    
+        name: admin
+        state: present
+        privilege: 15
+
+    - name: Save running-config to startup cfg
+      ios_config:
+        save_when: modified

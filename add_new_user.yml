@@ -1,0 +1,11 @@
+---
+- name: add new admin  users    
+  hosts: all
+  connection: local
+  tasks:
+    - name: Add new admin  user 
+      ios_user:
+        configured_password: go
+        name: admin
+        state: present
+        privilege: 15

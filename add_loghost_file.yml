@@ -1,0 +1,17 @@
+---
+- name: Add Log Host
+  hosts: routers,switches
+  gather_facts: true
+  connection: local
+  tasks:
+    - name: add log host
+      ios_config:
+          lines:
+           - logging host 192.168.1.75
+           - logging host 192.168.1.85
+           - logging host 192.168.1.67
+           #- no logging host 191.68.1.75
+
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified

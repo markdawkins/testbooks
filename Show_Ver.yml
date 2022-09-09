@@ -1,0 +1,22 @@
+---
+- hosts: all
+  gather_facts: false
+  connection: local  
+
+  tasks:
+    - name: run show version on remote devices
+      ios_command:
+        commands: show version  
+      register: result
+    - debug: var=result
+    
+    - ios_command:
+        commands:
+          - show version
+        waitfor:
+          - "result[0] contains IOS"
+   
+    - ios_command:
+        commands:
+          - show version
+          - show interfaces
