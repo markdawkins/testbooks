@@ -14,7 +14,7 @@
         command:
           - terminal length 0
           - configure terminal
-          - hostname csr01
+          - hostname csr02
 
     - name: Run show commands
       telnet:
