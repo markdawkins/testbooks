@@ -1,0 +1,28 @@
+---
+- name: Configure Telnet Devices
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Send configuration commands to IOS
+      telnet:
+        user: ansible
+        password: go
+        login_prompt: "Username: "
+        prompts:
+          - "[>#]"
+        command:
+          - terminal length 0
+          - configure terminal
+          - hostname csr01
+
+    - name: Run show commands
+      telnet:
+        user: ansible
+        password: go
+        login_prompt: "Username: "
+        prompts:
+          - "[>#]"
+        command:
+          - terminal length 0
+          - show version
