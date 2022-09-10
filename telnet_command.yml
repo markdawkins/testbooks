@@ -1,1 +1,28 @@
 ---
+- name: Configure Telnet Devices
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Send configuration commands to IOS
+      ansible.netcommon.telnet:
+        user: "{{ telnet_user }}" 
+        password: "{{ telnet_pass }}" 
+        login_prompt: "Username: "
+        prompts:
+          - "[>#]"
+        command:
+          - terminal length 0
+          - configure terminal
+          - hostname ios01
+
+    - name: Run show commands
+      ansible.netcommon.telnet:
+        user: "{{ telnet_user }}" 
+        password: "{{ telnet_pass }}" 
+        login_prompt: "Username: "
+        prompts:
+          - "[>#]"
+        command:
+          - terminal length 0
+          - show version
