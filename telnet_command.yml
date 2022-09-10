@@ -5,7 +5,7 @@
 
   tasks:
     - name: Send configuration commands to IOS
-      ansible.netcommon.telnet:
+      telnet:
         user: ansible 
         password: go 
         login_prompt: "Username: "
