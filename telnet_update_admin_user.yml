@@ -6,8 +6,8 @@
   tasks:
     - name: Send configuration commands to IOS
       telnet:
-        user: "{{telnet_user}}"
-        password: "{{telnet_pass}}"
+        user: admin
+        password: go
         login_prompt: "Username: "
         prompts:
           - "[>#]"
