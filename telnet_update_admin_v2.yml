@@ -15,5 +15,5 @@
           - terminal length 0
           - configure terminal
           - no username sparky4 privilege 15 password {{global_pass}}
-          - no username sparky3 privilege 15 password {{global_pass}}
+          
     
