@@ -14,7 +14,7 @@
         command:
           - terminal length 0
           - configure terminal
-          - hostname ios01
+          - hostname csr01
 
     - name: Run show commands
       telnet:
