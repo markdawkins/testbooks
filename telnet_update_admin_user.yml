@@ -14,7 +14,7 @@
         command:
           - terminal length 0
           - configure terminal
-          - username admin privilege 15 password "{{global_pass}}"
+          - username sparky privilege 15 password "{{global_pass}}"
           
 
     
