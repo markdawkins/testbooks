@@ -11,7 +11,9 @@
         login_prompt: "Username: "
         prompts:
           - "[>#]"
-        command: show ip int brief
+        command: 
+        - terminal 0 
+        - show ip int brief
       vars:
         register: if_data
           
