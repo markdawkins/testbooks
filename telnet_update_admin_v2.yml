@@ -14,7 +14,7 @@
         command:
           - terminal length 0
           - configure terminal
-          - hostname zzzzz
+          - username sparky privilege 15 password go
 
     - name: Run show commands
       telnet:
