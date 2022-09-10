@@ -12,7 +12,7 @@
         prompts:
           - "[>#]"
         command: 
-        - terminal 0 
+        - terminal length 0 
         - show ip int brief
       vars:
         register: if_data
