@@ -26,15 +26,10 @@
         command:
           - terminal length 0
           - show ip int brief
-          
-          
-    - name: Show ip int brief
-      ios_command:
-        commands: show ip int brief
       vars:
         ansible_command_timeout: 60
       register: if_data
-
-    - name: Interfaces output
+          
+        - name: Interfaces output
       debug:
         var: if_data['stdout_lines'][0]
