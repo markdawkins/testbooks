@@ -6,8 +6,8 @@
   tasks:
     - name: Send configuration commands to IOS
       telnet:
-        user: "{{ telnet_user }}" 
-        password: "{{ telnet_pass }}" 
+        user: ansible
+        password: go
         login_prompt: "Username: "
         prompts:
           - "[>#]"
@@ -18,8 +18,8 @@
 
     - name: Run show commands
       telnet:
-        user: "{{ telnet_user }}" 
-        password: "{{ telnet_pass }}" 
+        user: ansible
+        password: go
         login_prompt: "Username: "
         prompts:
           - "[>#]"
