@@ -4,18 +4,6 @@
   gather_facts: false
 
   tasks:
-    - name: Send configuration commands to IOS
-      telnet:
-        user: "{{telnet_user}}"
-        password: "{{telnet_pass}}"
-        login_prompt: "Username: "
-        prompts:
-          - "[>#]"
-        command:
-          - terminal length 0
-          - configure terminal
-          - hostname csr02
-
     - name: Run show commands
       telnet:
         user: "{{telnet_user}}"
@@ -27,6 +15,6 @@
       vars:
         register: if_data
           
-    - name: Interfaces output
+    - name: Output
       debug:
         var: if_data['stdout_lines'][0]
