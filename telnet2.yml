@@ -25,8 +25,7 @@
           - "[>#]"
         command: show ip int brief
       vars:
-        ansible_command_timeout: 10
-      register: if_data
+        register: if_data
           
     - name: Interfaces output
       debug:
