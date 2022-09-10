@@ -14,6 +14,7 @@
         command:
           - configure terminal
           - username sparky privilege 15 password go
+          - hostname ZZZZ
           
 
     
