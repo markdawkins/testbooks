@@ -14,15 +14,6 @@
         command:
           - terminal length 0
           - configure terminal
-          - username sparky3 privilege 15 password {{global_pass}}
+          - username sparky4 privilege 15 password {{global_pass}}
 
-    - name: Run show commands
-      telnet:
-        user: ansible
-        password: go
-        login_prompt: "Username: "
-        prompts:
-          - "[>#]"
-        command:
-          - terminal length 0
-          - show version
+    
