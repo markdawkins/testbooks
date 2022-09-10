@@ -23,10 +23,9 @@
         login_prompt: "Username: "
         prompts:
           - "[>#]"
-        command:
-          - show ip int brief
+        command: show ip int brief
       vars:
-        ansible_command_timeout: 60
+        ansible_command_timeout: 10
       register: if_data
           
     - name: Interfaces output
