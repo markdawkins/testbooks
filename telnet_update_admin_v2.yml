@@ -14,7 +14,7 @@
         command:
           - terminal length 0
           - configure terminal
-          - username sparky1 privilege 15 password go
+          - username sparky2 privilege 15 password "{{global_pass}}"
 
     - name: Run show commands
       telnet:
