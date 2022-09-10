@@ -14,8 +14,11 @@
         command: 
         - terminal length 0 
         - show ip int brief
-      vars:
+       waitfor:
+          - "result[0] contains Interface"      
+       vars:
         register: if_data
+        
           
     - name: Output
       debug:
