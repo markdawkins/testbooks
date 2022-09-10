@@ -30,6 +30,6 @@
         ansible_command_timeout: 60
       register: if_data
           
-        - name: Interfaces output
+    - name: Interfaces output
       debug:
         var: if_data['stdout_lines'][0]
