@@ -1,0 +1,40 @@
+---
+- name: Switch Report Brief
+  hosts: all
+  gather_facts: true
+  connection: local
+  tasks:
+    - name: Show ip int brief
+      ios_command:
+        commands: show ip int brief
+      vars:
+        ansible_command_timeout: 60
+      register: if_data
+
+    - name: Interfaces output
+      debug:
+        var: if_data['stdout_lines'][0]
+   
+   - name: Show interface status connected
+     ios_command:
+        commands: 
+        - show int status | inc connected
+        - show int status | count connected
+      vars:
+        ansible_command_timeout: 60
+      register: if_data1
+
+    - name: status  output
+      debug:
+        var: if_data1['stdout_lines'][0]
+        
+    - name: Show run  
+     ios_command:
+        commands: show run 
+      vars:
+        ansible_command_timeout: 60
+      register: if_data1
+
+    - name: status  output
+      debug:
+        var: if_data1['stdout_lines'][0]
