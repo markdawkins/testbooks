@@ -45,7 +45,7 @@
     - name: Show log 
       ios_command:
         commands: 
-        - show log | inc "{{Mo}}"
+        - show log | inc {{Mo}}
       vars:
         ansible_command_timeout: 60
       register: if_data4
