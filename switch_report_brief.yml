@@ -15,11 +15,11 @@
       debug:
         var: if_data['stdout_lines'][0]
    
-    - name: Show interface status connected
+    - name: Show interface summary
       ios_command:
         commands: 
-        - show int status | inc connected
-        - show int status | count connected
+        - show interface summary 
+        - show interface counters protocol status
       vars:
         ansible_command_timeout: 60
       register: if_data1
