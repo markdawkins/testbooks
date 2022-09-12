@@ -22,7 +22,12 @@
         - show interface counters protocol status
       vars:
         ansible_command_timeout: 60
-      register: if_data1
+      register: if_data2
+     
+    - name: Interfaces Output2
+      debug:
+        var: if_data2['stdout_lines'][0] 
+      
       
     - name: Show inventory 
       ios_command:
@@ -34,8 +39,10 @@
         - show log | inc "{{date}}"  
       vars:
         ansible_command_timeout: 60
-      register: if_data1
+      register: if_data3
 
-      
+    - name: Interfaces Output2
+      debug:
+        var: if_data3['stdout_lines'][0] 
 
    
