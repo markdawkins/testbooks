@@ -20,8 +20,8 @@
         commands: 
         - show int status | inc connected
         - show int status | count connected
-       vars:
-         ansible_command_timeout: 60
-       register: if_data1
+      vars:
+        ansible_command_timeout: 60
+      register: if_data1
 
    
