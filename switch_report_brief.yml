@@ -23,5 +23,19 @@
       vars:
         ansible_command_timeout: 60
       register: if_data1
+      
+    - name: Show inventory 
+      ios_command:
+        commands: 
+        - show inventory 
+        - - name: Show interface summary
+      ios_command:
+        commands: 
+        - show log | inc "{{date}}"  
+      vars:
+        ansible_command_timeout: 60
+      register: if_data1
+
+      
 
    
