@@ -33,7 +33,7 @@
       ios_command:
         commands: 
         - show inventory 
-        - show log | inc "{{date}}"  
+        - show log  
       vars:
         ansible_command_timeout: 60
       register: if_data3
