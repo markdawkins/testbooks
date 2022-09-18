@@ -1,0 +1,16 @@
+##### Connect to docker container and look at yml folder with playbooks in awx#####
+
+<<Comands to use to view docker contaitners>>>
+docker ps  
+  
+<<Comand to use to connect to your  docker contaitners>>> 
+
+docker exec -it awx_task bash 
+
+<<Comand to use to view your project and all of yoru playbook files >>>
+
+cd /var/lib/awx/projects/
+
+cd _51__homelab           <----Project folder called home_lab
+
+ls -lrt                   <----Command to list out the 
