@@ -89,8 +89,6 @@
         - ping 8.8.4.4
       provider: "{{ cli }}"
       timeout: 30      
-      #vars:
-        #ansible_command_timeout: 60
       register: if_data4
 
     - name: Output 8
