@@ -6,7 +6,9 @@
   tasks:
     - name: Show int status 
       ios_command:
-        commands: show int status | inc connected
+        commands: 
+        - show interface summary 
+       #- show int status | inc connected
       vars:
         ansible_command_timeout: 60
       register: if_data
