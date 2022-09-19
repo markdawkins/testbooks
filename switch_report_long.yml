@@ -17,7 +17,7 @@
       debug:
         var: if_data['stdout_lines'][0]
    
-    - name: show int status | count  connected
+    - name: show interface stats
       ios_command:
         commands: 
         - show interface stats
@@ -31,7 +31,7 @@
         var: if_data2['stdout_lines'][0] 
       
       
-    - name: Show mac address table  
+    - name: Show arp  
       ios_command:
         commands: 
         - show arp 
@@ -44,19 +44,8 @@
     - name: Output3
       debug:
         var: if_data3['stdout_lines'][0] 
-        
-    - name: Show cdp nei 
-      ios_command:
-        commands: 
-        - show cdp nei | inc AP|ap'
-      vars:
-        ansible_command_timeout: 60
-      register: if_data4
-
-    - name: Output 4
-      debug:
-        var: if_data4['stdout_lines'][0] 
-    
+      
+       
     - name: Show ip int brie 
       ios_command:
         commands: 
@@ -93,10 +82,11 @@
       debug:
         var: if_data4['stdout_lines'][0] 
     
-    - name: Show log 
+    - name: ping  
       ios_command:
         commands: 
-        - ping 8.8.8.8 
+        - ping 8.8.8.8
+        - ping 8.8.4.4
       vars:
         ansible_command_timeout: 60
       register: if_data4
