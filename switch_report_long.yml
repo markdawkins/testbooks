@@ -20,7 +20,8 @@
     - name: show int status | count  connected
       ios_command:
         commands: 
-        - show int status | count  connected
+        - show interface stats
+        #- show int status | count  connected
       vars:
         ansible_command_timeout: 60
       register: if_data2
