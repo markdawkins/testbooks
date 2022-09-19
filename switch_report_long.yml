@@ -88,3 +88,16 @@
     - name: Output 6
       debug:
         var: if_data4['stdout_lines'][0] 
+        
+    - name: Show log 
+      ios_command:
+        commands: 
+        - show log | inc {{Mo}}  {{Date}}
+      vars:
+        ansible_command_timeout: 60
+      register: if_data4
+
+    - name: Output 7
+      debug:
+        var: if_data4['stdout_lines'][0] 
+
