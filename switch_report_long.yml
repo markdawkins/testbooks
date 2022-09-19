@@ -1,0 +1,90 @@
+---
+- name: show int status 
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Show int status 
+      ios_command:
+        commands: show int status | inc connected
+      vars:
+        ansible_command_timeout: 60
+      register: if_data
+
+    - name: Output1
+      debug:
+        var: if_data['stdout_lines'][0]
+   
+    - name: show int status | count  connected
+      ios_command:
+        commands: 
+        - show int status | count  connected
+      vars:
+        ansible_command_timeout: 60
+      register: if_data2
+     
+    - name: Output2
+      debug:
+        var: if_data2['stdout_lines'][0] 
+      
+      
+    - name: Show mac address table  
+      ios_command:
+        commands: 
+        - show mac address-table  | inc DYNAMIC 
+        - show mac address-table  | count DYNAMIC  
+      vars:
+        ansible_command_timeout: 60
+      register: if_data3
+
+    - name: Output3
+      debug:
+        var: if_data3['stdout_lines'][0] 
+        
+    - name: Show cdp nei 
+      ios_command:
+        commands: 
+        - show cdp nei | inc AP|ap'
+      vars:
+        ansible_command_timeout: 60
+      register: if_data4
+
+    - name: Output 4
+      debug:
+        var: if_data4['stdout_lines'][0] 
+
+    - name: Show cdp nei 
+      ios_command:
+        commands: 
+        - show cdp nei | inc AP|ap'
+      vars:
+        ansible_command_timeout: 60
+      register: if_data4
+
+    - name: Output 4
+      debug:
+        var: if_data4['stdout_lines'][0] 
+    
+    - name: Show ip int brie 
+      ios_command:
+        commands: 
+        - show ip int brie | exc unassigned
+      vars:
+        ansible_command_timeout: 60
+      register: if_data4
+
+    - name: Output 5
+      debug:
+        var: if_data4['stdout_lines'][0] 
+   
+    - name: Show inventory 
+      ios_command:
+        commands: 
+        - show inventory
+      vars:
+        ansible_command_timeout: 60
+      register: if_data4
+
+    - name: Output 6
+      debug:
+        var: if_data4['stdout_lines'][0] 
