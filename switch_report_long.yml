@@ -56,18 +56,6 @@
     - name: Output 4
       debug:
         var: if_data4['stdout_lines'][0] 
-
-    - name: Show cdp nei 
-      ios_command:
-        commands: 
-        - show cdp nei | inc AP|ap'
-      vars:
-        ansible_command_timeout: 60
-      register: if_data4
-
-    - name: Output 4
-      debug:
-        var: if_data4['stdout_lines'][0] 
     
     - name: Show ip int brie 
       ios_command:
@@ -104,4 +92,17 @@
     - name: Output 7
       debug:
         var: if_data4['stdout_lines'][0] 
+    
+    - name: Show log 
+      ios_command:
+        commands: 
+        - ping 8.8.8.8 
+      vars:
+        ansible_command_timeout: 60
+      register: if_data4
+
+    - name: Output 8
+      debug:
+        var: if_data4['stdout_lines'][0] 
+    
 
