@@ -87,7 +87,7 @@
         commands: 
         - ping 8.8.8.8
         - ping 8.8.4.4
-      provider: "{{ cli }}"
+      provider: "{{ local }}"
       timeout: 30      
       register: if_data4
 
