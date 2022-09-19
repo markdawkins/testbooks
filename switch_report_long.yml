@@ -34,8 +34,9 @@
     - name: Show mac address table  
       ios_command:
         commands: 
-        - show mac address-table  | inc DYNAMIC 
-        - show mac address-table  | count DYNAMIC  
+        - show arp 
+        # - show mac address-table  | inc DYNAMIC 
+        # - show mac address-table  | count DYNAMIC  
       vars:
         ansible_command_timeout: 60
       register: if_data3
