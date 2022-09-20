@@ -2,7 +2,7 @@ Commands to use when view playbooks in the docker container
 
 ##### Connect to docker container and look at yml folder with playbooks in awx#####
 
-<< Commands to use to view docker contaitners >>>
+<< Commands to use to view docker containers >>>
 
 docker ps  
   
@@ -17,3 +17,9 @@ cd /var/lib/awx/projects/
 cd _51__homelab           <----Project folder called home_lab
 
 ls -lrt                   <----Command to list out the 
+
+
+
+#### Use these comamnds to get to the local playbook directory  in AWX/Tower #####
+cd /var/lib/awx/projects/_19__test_project       <-- test playbooks
+cd /var/lib/awx/projects/_20__network_team            <--- Prod books
