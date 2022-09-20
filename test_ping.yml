@@ -1,6 +1,6 @@
 ---
 - name: Loop over Inventory 
-  hosts: node1
+  hosts: all
   tasks:
     - name: Ping all hosts
       #ios_command: ping -c 1 "{{ item }}"
