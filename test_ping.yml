@@ -1,2 +1,11 @@
 ---
-###TEST PING COMMAND####
+- name: Loop over Inventory 
+  hosts: node1
+  tasks:
+    - name: Ping all hosts
+      #ios_command: ping -c 1 "{{ item }}"
+      #loop: "{{ groups['hq_hosts'] }}"
+      ios_command: 
+      - ping -c 1 8.8.8.8
+      - ping -c 1 8.8.4.4
+      - ping -c 1 4.4.4.4
