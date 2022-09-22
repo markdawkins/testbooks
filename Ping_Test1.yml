@@ -2,7 +2,7 @@
 - name: Ping test to a group of external hosts 
   hosts: all
   gather_facts: false
-  connection: local
+  connection: ansible.netcommon.network_cli  
   tasks:
     - name: Test reachability to external hosts
       cisco.iosxr.iosxr_ping:
