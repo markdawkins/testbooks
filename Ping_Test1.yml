@@ -5,5 +5,5 @@
   connection: ansible.netcommon.network_cli  
   tasks:
     - name: Test reachability to external hosts
-      cisco.iosxr.iosxr_ping:
+      cisco.ios.ios_ping:
         dest: 8.8.8.8
