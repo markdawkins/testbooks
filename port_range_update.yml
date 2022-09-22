@@ -13,10 +13,8 @@
         - no mop sysid 
         - negotiation auto 
         parents: interface range gigabit 1 - 3 
-    
-    - name: Interfaces output1
       debug:
-        var: if_data['stdout_lines'][0]    
+        msg: " 1st Port range completed"    
     
     
     - name: Update 2nd  group of ports 
@@ -25,8 +23,6 @@
         - description port range test
         - no shut 
         parents: interface range loopback 1 - 3 
-        
-        
-    - name: Interfaces output2
       debug:
-        var: if_data['stdout_lines'][0]    
+        msg: " 2nd  Port range completed"  
+            
