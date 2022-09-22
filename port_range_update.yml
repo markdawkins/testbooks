@@ -13,8 +13,8 @@
         - no mop sysid 
         - negotiation auto 
         parents: interface range gigabit 1 - 3 
-      debug:
-        msg: " 1st Port range completed"    
+        debug:
+          msg: " 1st Port range completed"    
     
     
     - name: Update 2nd  group of ports 
@@ -23,6 +23,6 @@
         - description port range test
         - no shut 
         parents: interface range loopback 1 - 3 
-      debug:
-        msg: " 2nd  Port range completed"  
+        debug:
+          msg: " 2nd  Port range completed"  
             
