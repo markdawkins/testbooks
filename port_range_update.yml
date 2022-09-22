@@ -2,7 +2,7 @@
 - name: Update range of ports  
   hosts: all
   gather_facts: false
-  connection: local
+  connection: network_cli
   tasks:
     - name: Update 1st group of ports 
       ios_config:
