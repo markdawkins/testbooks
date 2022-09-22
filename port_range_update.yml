@@ -4,7 +4,7 @@
   gather_facts: false
   connection: local
   tasks:
-    - name: update 1st group of ports 
+    - name: Update 1st group of ports 
       ios_config:
         lines:
         - description port range test
@@ -14,7 +14,7 @@
         - negotiation auto 
         parents: interface range gigabit 1 - 3 
         
-    - name: update 2nd  group of ports 
+    - name: Update 2nd  group of ports 
       ios_config:
         lines:
         - description port range test
