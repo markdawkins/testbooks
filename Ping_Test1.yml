@@ -1,0 +1,9 @@
+---
+- name: Ping test to a group of external hosts 
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Test reachability to external hosts
+      cisco.iosxr.iosxr_ping:
+        dest: 8.8.8.8
