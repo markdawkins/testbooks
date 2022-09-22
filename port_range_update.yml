@@ -16,7 +16,7 @@
         
     - name: Pause for 1 minute to allow ports to finish
       ansible.builtin.pause:
-        minutes: .5    
+        minutes: 1    
     
     - name: Update 2nd  group of ports 
       ios_config:
