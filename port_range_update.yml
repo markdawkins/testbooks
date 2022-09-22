@@ -1,0 +1,13 @@
+----
+- name: Update range of ports  
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: update range of ports 
+      ios_config:
+        lines:
+        - description port range test
+        - cdp enable
+        parents: interface range gigagit 1 - 3 
+        #match: exact
