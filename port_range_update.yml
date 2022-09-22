@@ -13,7 +13,7 @@
         - no mop sysid 
         - negotiation auto 
         parents: interface range gigabit 1 - 3
-         delay: 10
+        delay: 10
       
     - name: Update 2nd  group of ports 
       ios_config:
