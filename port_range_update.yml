@@ -9,5 +9,5 @@
         lines:
         - description port range test
         - cdp enable
-        parents: interface range gigagit 1 - 3 
+        parents: interface range gigabit 1 - 3 
         #match: exact
