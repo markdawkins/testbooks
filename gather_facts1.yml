@@ -12,8 +12,6 @@
     - name: Interfaces output
       debug:
         var: if_data['stdout_lines'][0]
-
-
         
     - name: Do not gather hardware facts
       cisco.ios.ios_facts:
