@@ -2,7 +2,6 @@
 - name: Issue show commands
   hosts: all
   gather_facts: false
-  ansible_network_os: ios
   connection: network_cli
   tasks:
     - name: Gather all legacy facts
