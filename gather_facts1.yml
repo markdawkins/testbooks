@@ -7,6 +7,9 @@
     - name: Gather all legacy facts
       cisco.ios.ios_facts:
         gather_subset: all
+        register: result
+    - debug: var=result
+
         
     - name: Do not gather hardware facts
       cisco.ios.ios_facts:
