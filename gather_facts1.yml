@@ -2,7 +2,7 @@
 - name: Issue show commands
   hosts: all
   gather_facts: true
-  connection: ansible.netcommon.network_cli
+  connection: local
   tasks:
     - name: Gather all legacy facts
       cisco.ios.ios_facts:
