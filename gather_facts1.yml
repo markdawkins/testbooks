@@ -2,13 +2,17 @@
 - name: Issue show commands
   hosts: all
   gather_facts: true
-  connection: local
+  connection: ansible.netcommon.network_cli
   tasks:
     - name: Gather all legacy facts
       cisco.ios.ios_facts:
         gather_subset: all
-        register: result
-    - debug: var=result
+        register: if_data
+
+    - name: Interfaces output
+      debug:
+        var: if_data['stdout_lines'][0]
+
 
         
     - name: Do not gather hardware facts
