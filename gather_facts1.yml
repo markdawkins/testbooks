@@ -7,31 +7,18 @@
     - name: Gather all legacy facts
       cisco.ios.ios_facts:
         gather_subset: all
-        available_network_resources: if_data
-
-    - name: Interfaces output
-      debug:
-        var: if_data['stdout_lines'][0]
+        
         
     - name: Do not gather hardware facts
       cisco.ios.ios_facts:
         gather_subset:
         - '!hardware'
-        register: if_data
-
-    - name: Interfaces output
-      debug:
-        var: if_data['stdout_lines'][0]
-        
+                
     - name: Gather legacy and resource facts
       cisco.ios.ios_facts:
         gather_subset: all
         gather_network_resources: all
-        register: if_data
-
-    - name: Interfaces output
-      debug:
-        var: if_data['stdout_lines'][0]
+        
     
     - name: Gather only the interfaces resource facts and no legacy facts
       cisco.ios.ios_facts:
@@ -40,8 +27,4 @@
         - '!min'
         gather_network_resources:
         - interfaces
-        register: if_data
-
-    - name: Interfaces output
-      debug:
-        var: if_data['stdout_lines'][0]
+        
