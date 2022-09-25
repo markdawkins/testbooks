@@ -1,0 +1,6 @@
+---
+- name: Issue show commands
+  hosts: all
+  gather_facts: true
+  connection: local
+  tasks:
