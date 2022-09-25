@@ -7,7 +7,7 @@
     - name: Gather all legacy facts
       cisco.ios.ios_facts:
         gather_subset: all
-        register: if_data
+        available_network_resources: if_data
 
     - name: Interfaces output
       debug:
