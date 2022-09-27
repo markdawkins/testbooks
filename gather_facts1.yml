@@ -1,7 +1,6 @@
 ---
 - name: Issue show commands
   hosts: all
-  gather_facts: false
   connection: network_cli
   tasks:
     - name: Gather all legacy facts
@@ -9,22 +8,5 @@
         gather_subset: all
         
         
-    - name: Do not gather hardware facts
-      cisco.ios.ios_facts:
-        gather_subset:
-        - '!hardware'
-                
-    - name: Gather legacy and resource facts
-      cisco.ios.ios_facts:
-        gather_subset: all
-        gather_network_resources: all
-        
     
-    - name: Gather only the interfaces resource facts and no legacy facts
-      cisco.ios.ios_facts:
-        gather_subset:
-        - '!all'
-        - '!min'
-        gather_network_resources:
-        - interfaces
         
