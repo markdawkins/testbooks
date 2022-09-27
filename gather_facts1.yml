@@ -1,12 +1,16 @@
 ---
-- name: Issue show commands
+- name: Test IOS Facts
   hosts: all
-  connection: network_cli
+  # connection: network_cli
   tasks:
     - name: Gather all legacy facts
       cisco.ios.ios_facts:
         gather_subset: all
-        
+      register: all_subset
+     
+    - name: Print Subset All
+      debug:
+        var: all_subset
         
     
         
