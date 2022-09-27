@@ -1,7 +1,6 @@
 ---
 - name: Test IOS Facts
   hosts: all
-  # connection: network_cli
   tasks:
     - name: Gather all legacy facts
       cisco.ios.ios_facts:
