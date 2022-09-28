@@ -1,0 +1,16 @@
+---
+- name: backup commands
+  hosts: all
+  gather_facts: false
+  connection: local
+  vars_prompt:
+    - name: model_number
+      prompt: What is the model number ?
+      private: no
+  tasks:
+    - name: configurable backup path
+      cisco.iosxr.iosxr_config:
+        backup: yes
+        backup_options:
+          filename: backup_{{model_number}}_{{ inventory_hostname }}.cfg
+          dir_path: ./backups
