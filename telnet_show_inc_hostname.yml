@@ -1,1 +1,18 @@
 ---
+- name: Configure Telnet Devices
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Run show commands
+      telnet:
+        user: "{{telnet_user}}"
+        password: "{{telnet_pass}}"
+        login_prompt: "Username: "
+        prompts:
+          - "[>#]"
+        command: 
+        #- terminal length 0 
+        - show run inc hostname
+        #vars:
+          #ansible_command_timeout: 60
