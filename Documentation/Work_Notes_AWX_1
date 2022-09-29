@@ -23,3 +23,12 @@ ls -lrt                   <----Command to list out the
 #### Use these comamnds to get to the local playbook directory  in AWX/Tower #####
 cd /var/lib/awx/projects/_19__test_project       <-- test playbooks
 cd /var/lib/awx/projects/_20__network_team            <--- Prod books
+
+#####To increase the speed of ansible playbooks turn on pipelining
+
+[ssh_connection]
+pipelining = True
+
+###MITOGEN IS UP TO 6 times faster then the default Ansible configuration ####
+mitogen article for even faster results:
+https://www.toptechskills.com/ansible-tutorials-courses/speed-up-ansible-playbooks-pipelining-mitogen/
