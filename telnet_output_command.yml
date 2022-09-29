@@ -12,7 +12,7 @@
         prompts:
           - "[>#]"
         command: 
-        - terminal length 0 
+        #- terminal length 0 
         - show ip int brief
         vars:
           ansible_command_timeout: 60
@@ -21,3 +21,4 @@
     - name: Output1
       debug:
         var: if_data['stdout_lines'][0]
+
