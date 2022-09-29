@@ -1,6 +1,6 @@
 ---
 - name: Add Log Host
-  hosts: routers,switches
+  hosts: all
   gather_facts: true
   connection: local
   tasks:
