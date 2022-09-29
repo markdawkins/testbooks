@@ -14,12 +14,10 @@
         command: 
         - terminal length 0 
         - show ip int brief
-        debug:
-          - "result[0] contains Interface"      
         vars:
-          register: if_data
-        
-          
-    - name: Output
+          ansible_command_timeout: 60
+        register: if_data
+
+    - name: Output1
       debug:
         var: if_data['stdout_lines'][0]
