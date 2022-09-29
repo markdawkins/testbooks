@@ -16,10 +16,10 @@
         - show ip int brief
         #waitfor:
           #- "result[0] contains Interface"      
-        #vars:
-          #register: if_data
+        vars:
+          register: if_data
         
           
-    #- name: Output
-      #debug:
-        #var: if_data['stdout_lines'][0]
+    - name: Output
+      debug:
+        var: if_data['stdout_lines'][0]
