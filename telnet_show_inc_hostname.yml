@@ -2,7 +2,6 @@
 - name: Configure Telnet Devices
   hosts: all
   gather_facts: false
-
   tasks:
     - name: Run show commands
       telnet:
@@ -14,9 +13,4 @@
         command: 
         - terminal length 0 
         - show run | inc hostname
-        register:
-          var: output1
-          
-    - name: Print Output1
-      debug:
-        var: output1
+        
