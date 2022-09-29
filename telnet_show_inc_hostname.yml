@@ -16,3 +16,7 @@
         - show run | inc hostname
         register:
           var: output1
+          
+    - name: Print Output1
+      debug:
+        var: output1
