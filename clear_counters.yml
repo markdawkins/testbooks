@@ -1,0 +1,11 @@
+---
+
+- name: run commands that require answering a prompt
+  cisco.ios.ios_command:
+    commands:
+    - command: 'clear counters {{ port_1}}'
+      prompt: 'Clear "show interface" counters on this interface \[confirm\]'
+      answer: 'y'
+    - command: 'clear counters {{port_2}}'
+      prompt: '[confirm]'
+      answer: "\r"
