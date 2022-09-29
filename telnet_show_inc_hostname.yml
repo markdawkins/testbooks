@@ -14,5 +14,5 @@
         command: 
         - terminal length 0 
         - show run | inc hostname
-        #vars:
-          #ansible_command_timeout: 60
+        register:
+          var: output1
