@@ -12,7 +12,7 @@
         prompts:
           - "[>#]"
         command: 
-        - terminal length 0 
+        #- terminal length 0 
         - show ip int brief
         #vars:
           #ansible_command_timeout: 60
