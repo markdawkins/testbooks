@@ -1,9 +1,12 @@
 ---
-
- vars_prompt:
-   - name: Clear coounters port number 1
-     prompt: What is the model number ?
-     private: no
+- name: Clear counterer commands
+  hosts: all
+  gather_facts: false
+  connection: local
+  vars_prompt:
+    - name: Clear coounters port number 1
+      prompt: What is the model number ?
+      private: no
 tasks:
   - name: run commands that require answering a prompt
     cisco.ios.ios_command:
