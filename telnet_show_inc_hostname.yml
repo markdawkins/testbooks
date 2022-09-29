@@ -13,6 +13,6 @@
           - "[>#]"
         command: 
         #- terminal length 0 
-        - show run inc hostname
+        - show run | inc hostname
         #vars:
           #ansible_command_timeout: 60
