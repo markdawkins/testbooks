@@ -16,9 +16,4 @@
         - show ip int brief
         #vars:
           #ansible_command_timeout: 60
-        register: if_data
-
-    - name: Output1
-      debug:
-        var: if_data['stdout_lines'][0]
 
