@@ -1,0 +1,16 @@
+---
+- name: Issue show cpu commands
+  hosts: all
+  gather_facts: true
+  connection: local
+  tasks:
+    - name: Show cpu 5 minutes
+      ios_command:
+        commands: show proc cpu sorted | inc five minutes:
+      vars:
+        ansible_command_timeout: 60
+      register: if_data
+
+    - name: Interfaces output
+      debug:
+        var: if_data['stdout_lines'][0]
