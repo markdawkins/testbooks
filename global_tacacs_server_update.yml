@@ -1,0 +1,25 @@
+---
+- name: Tacacs timeout update
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Update tacacs server timeout
+      ios_config:
+          lines:
+           - tacacs-server timeout 15
+           #- tacacs-server timeout 15
+
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified
+
+    - name: Show tacacs server timeout
+      ios_command:
+        commands:
+          - show run | inc tacacs-server timeout
+      register: if_data
+
+    - name: Show run output to verify change completed
+      debug:
+        var: if_data['stdout_lines'][0]
