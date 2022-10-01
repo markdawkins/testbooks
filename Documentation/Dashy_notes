@@ -1,0 +1,36 @@
+Worknotes:
+
+URL Reference for Docker(excellent resource) :
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
+
+My history when using these URL Directions:
+
+  sudo apt update
+  sudo apt install apt-transport-https ca-certificates curl software-properties-common
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  sudo apt update
+  apt-cache policy docker-ce
+  sudo apt install docker-ce
+  sudo systemctl status docker
+  sudo usermod -aG docker ${USER}
+  exit
+  su - ${USER}
+  exit
+  docker ps -a
+  ip a
+  docker ps -a
+
+
+
+
+URL Reference for dashy:
+https://www.youtube.com/watch?v=z6whWBBYQEY&list=PLwE7R1hUI2c77D-oaaTas7EAm6MxOy020&index=35&t=96s
+
+After docker installation run this command to install dashy 
+
+mark@vmn51:~$ docker run -d \
+  -p 8080:80 \
+  --name my-dashboard \
+  --restart=always \
+  lissy93/dashy:latest
