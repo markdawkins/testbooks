@@ -1,3 +1,7 @@
+#####Link to show how to use github with private tokens#####
+https://murrahjm.github.io/Source-Control-and-the-Tower-Project/
+
+
 Commands to use when view playbooks in the docker container
 
 ##### Connect to docker container and look at yml folder with playbooks in awx#####
