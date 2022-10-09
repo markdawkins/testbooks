@@ -9,5 +9,5 @@
         ise_password: "{{ ise_password }}"
         ise_verify: "{{ ise_verify }}"
         state: absent
-        name: Test_Device_7
+        name: "{{ device_name }}"
       register: result
