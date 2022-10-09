@@ -1,0 +1,15 @@
+- hosts: dnac_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: no
+  tasks:
+  - name: Create tag with name "MyNewTag"
+    cisco.dnac.tag:
+      dnac_host: "{{dnac_host}}"
+      dnac_username: "{{dnac_username}}"
+      dnac_password: "{{dnac_password}}"
+      dnac_verify: "{{dnac_verify}}"
+      state: present
+      description: My Tag
+      name: MyNewTag
+    register: result
