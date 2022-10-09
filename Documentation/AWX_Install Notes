@@ -1,0 +1,69 @@
+####Guide for AWX installation 
+https://github.com/geerlingguy/tower-operator
+
+###Guide for AWX operator
+https://github.com/ansible/awx-operator
+
+
+***********KUBERNETES CLUSTER INSTALLATION *************************
+
+###Install guide to build a kubernetes cluster using mini kuge(short script)
+https://minikube.sigs.k8s.io/docs/start/
+
+###Script START####
+1. curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   
+   
+   
+####   From a terminal with administrator access (but not logged in as root), run: I added the sudo command beow
+2. sudo minikube start
+
+
+###Interact with your cluster
+###f you already have kubectl installed, you can now use it to access your shiny new cluster:
+
+3_A. kubectl get po -A
+
+##Copy
+###Alternatively, minikube can download the appropriate version of kubectl and you should be able to use it like this:
+
+3_B.  minikube kubectl -- get po -A
+
+
+Initially, some services such as the storage-provisioner, may not yet be in a Running state. This is a normal condition during cluster bring-up, and will resolve itself momentarily. For additional insight into your cluster state, minikube bundles the Kubernetes Dashboard, allowing you to get easily acclimated to your new environment:
+
+4.  minikube dashboard
+
+
+5. Manage your cluster
+
+#Pause Kubernetes without impacting deployed applications:
+
+minikube pause
+
+#Unpause a paused instance:
+
+minikube unpause
+
+#Halt the cluster:
+
+minikube stop
+
+#Change the default memory limit (requires a restart):
+
+minikube config set memory 9001
+
+#Browse the catalog of easily installed Kubernetes services:
+
+
+#Create a second cluster running an older Kubernetes release:
+
+minikube start -p aged --kubernetes-version=v1.16.1
+
+#Delete all of the minikube clusters:
+
+minikube delete --all
+
+
+
