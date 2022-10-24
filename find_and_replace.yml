@@ -7,7 +7,7 @@
     - name: show ip route output
       ios_command:
         commands: show ip route 
-      register: router_output
+      register: route_output
       
     - name: configure default route 
       ios_config:
