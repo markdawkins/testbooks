@@ -5,12 +5,12 @@
   
   tasks:
     - name: show ip route output
-      cisco.ios.ios_command:
+      ios_command:
         commands: show ip route 
       register: route_output
       
     - name: configure default route 
-      cisco.ios.ios_config:
+      ios_config:
         lines: ip route 0.0.0.0 0.0.0.0 192.168.1.1
       when: route_output is search("Gateway of last resort is not set")
       
