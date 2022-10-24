@@ -1,4 +1,11 @@
 
+### Command to copy from containter to local host. This command is run from the localhost###
+sudo docker cp <docker_container_id>:/home/ansible/backups/  /home/ansible/backups/
+
+
+
+
+
 URL Reference for Docker(excellent resource) :
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04
 
