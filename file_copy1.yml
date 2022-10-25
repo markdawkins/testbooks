@@ -1,10 +1,8 @@
 ---
-- name: Copying files from the container to local directory /home/ansible/backups
-      hosts: 127.0.0.1
-      gather_facts: False
-      connection: local      
-      tasks:
-        - name: file copy command    
-          shell:
-            "/home/ansible/bash_scripts/docker_copy.sh"
+  - name: Copying files from the container to local directory /home/ansible/backups
+    hosts: localhost
+    connection: local      
+    tasks:
+    - name: file copy command    
+      shell: "/home/ansible/bash_scripts/docker_copy.sh"
       #become: true
