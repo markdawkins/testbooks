@@ -7,7 +7,7 @@
        shell: "ls -lrt"
        register: "output"
 
-    - debug: var=output.stdout_lines    
+    #- debug: var=output.stdout_lines    
     
     - name: file copy command    
       shell: "docker cp awx_task:/home/ansible/backups/  /home/ansible/backups/"
