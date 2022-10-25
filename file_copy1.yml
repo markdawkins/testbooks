@@ -4,5 +4,5 @@
     connection: local      
     tasks:
     - name: file copy command    
-      shell: "/home/ansible/bash_scripts/docker_copy.sh"
+      shell: "docker cp awx_task:/home/ansible/backups/  /home/ansible/backups/"
       #become: true
