@@ -16,8 +16,8 @@
          dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
          
     - name: Copying files from the container to local directory /home/ansible/backups
-      ansible.builtin.shell:
-        cmd: /bash_scripts/docker_copy.sh
+      shell:
+        "/home/ansible/bash_scripts/docker_copy.sh"
       #become: true
       
 ...
