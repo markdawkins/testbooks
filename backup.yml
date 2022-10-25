@@ -15,13 +15,6 @@
         content: "{{ config.stdout[0] }}"
         dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
          
-    - name: Copying files from the container to local directory /home/ansible/backups
-      hosts: localhost
-      tasks:
-      - name: file copy command    
-        shell:
-           "/home/ansible/bash_scripts/docker_copy.sh"
-      #become: true
-      
+         
 ...
 
