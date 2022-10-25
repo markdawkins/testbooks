@@ -1,7 +1,7 @@
 ---
 - name: backup commands
   hosts: all
-  gather_facts: false
+  gather_facts: False
   connection: local
   tasks:
     - name: show run 
