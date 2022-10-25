@@ -23,7 +23,7 @@
     - name: Change the working directory to somedir/ before executing the command
       ansible.builtin.shell: docker_copy.sh
       args:
-        chdir: bash_scripts/docker_copy.sh
+        chdir: /bash_scripts/docker_copy.sh
       
 ...
 
