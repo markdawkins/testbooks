@@ -18,6 +18,6 @@
     - name: Copying files from the container to local directory /home/ansible/backups
       ansible.builtin.shell:
         cmd: docker cp awx_task:/home/ansible/backups/    /home/ansible/backups/
-      #become: true
+      become: true
 ...
 
