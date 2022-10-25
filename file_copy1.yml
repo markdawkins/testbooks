@@ -8,7 +8,7 @@
        register: "output"
        
      - debug:
-        var: if_data['stdout_lines'][0]   
+        var: output['stdout_lines'][0]   
         
      - name: file copy command    
        shell: "docker cp awx_task:/home/ansible/backups/  /home/ansible/backups/"
