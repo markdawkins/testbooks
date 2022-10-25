@@ -15,9 +15,9 @@
          content: "{{ config.stdout[0] }}"
          dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
          
-         - name: This command will change copy files from the container to a local directory
-           ansible.builtin.shell:
-             cmd: docker cp  awx_task:/home/ansible/backups/    /home/ansible/backups/
-           #become: true
+    - name: This command will change copy files from the container to a local directory
+      ansible.builtin.shell:
+        cmd: docker cp  awx_task:/home/ansible/backups/    /home/ansible/backups/
+      #become: true
 ...
 
