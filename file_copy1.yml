@@ -1,6 +1,6 @@
 ---
 - name: Copying files from the container to local directory /home/ansible/backups
-      hosts: localhost
+      hosts: 127.0.0.1
       gather_facts: False
       connection: local      
       tasks:
