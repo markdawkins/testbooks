@@ -9,9 +9,10 @@
         commands:
           - show run
       register: config
-
+  #tasks:
     - name: save output to /home/ansible/backups
       hosts: localhost
+      connection: local 
       copy: 
          content: "{{ config.stdout[0] }}"
          dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
