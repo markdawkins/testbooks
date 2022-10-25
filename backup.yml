@@ -9,15 +9,15 @@
         commands:
           - show run
       register: config
-  #tasks:
+  
     - name: save output to /home/ansible/backups
-      hosts: localhost
-      connection: local 
       copy: 
-         content: "{{ config.stdout[0] }}"
-         dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
+        content: "{{ config.stdout[0] }}"
+        dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
          
     - name: Copying files from the container to local directory /home/ansible/backups
+      hosts: localhost
+      connection: local 
       shell:
         "/home/ansible/bash_scripts/docker_copy.sh"
       #become: true
