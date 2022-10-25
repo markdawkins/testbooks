@@ -14,4 +14,9 @@
       copy: 
          content: "{{ config.stdout[0] }}"
          dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
-...
+         
+    - name: copy from containter to /home/ansible/backups  
+      copy: 
+         src:  "awx_task:/home/ansible/backups/    /home/ansible/backups/"
+         dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
+...   #become: true 
