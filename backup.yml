@@ -18,5 +18,5 @@
     - name: copy from containter to /home/ansible/backups  
       copy: 
          src:  "awx_task:/home/ansible/backups/    /home/ansible/backups/"
-         dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
+         dest: "/home/ansible/backups/{{inventory_group}}_{{run_date}}_{{ inventory_hostname }}.txt"
 ...   #become: true 
