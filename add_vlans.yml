@@ -2,14 +2,11 @@
 - hosts: all
   gather_facts: false
   connection: local 
-  
   tasks:
-    - name: Override device configuration of all VLANs with provided configuration
+    - name: Create new VLAN 
       cisco.ios.ios_vlans:
-        config:
-        - name: Vlan_10
-          vlan_id: 10
-          state: active
+        aggregate:
+        - {vlan_id: "{{ vlan_id }}" , name: "{{ vlan_name }}" , interfaces: "{{ interface }}" }
       
         - name: save running to startup when modified
           ios_config:
