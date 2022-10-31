@@ -7,9 +7,9 @@
     - name: Override device configuration of all VLANs with provided configuration
       cisco.ios.ios_vlans:
         config:
-    - name: Vlan_10
-      vlan_id: 100
-    state: active
+    - name: Vlan {{vlan_name}}
+      vlan_id: {{vlan_id}}
+      state: active
       
     - name: save running to startup when modified
       ios_config:
