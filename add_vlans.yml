@@ -7,7 +7,7 @@
     - name: Override device configuration of all VLANs with provided configuration
       cisco.ios.ios_vlans:
         config:
-    - name: Vlan {{vlan_name}}
+    - name: Vlan "{{vlan_name}}"
       vlan_id: "{{vlan_id}}"
       state: active
       
