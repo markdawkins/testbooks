@@ -1,1 +1,11 @@
-
+---
+- hosts: all
+  connection: local 
+  
+  tasks:
+    - name: Override device configuration of all VLANs with provided configuration
+      cisco.ios.ios_vlans:
+        config:
+      - name: Vlan_10
+        vlan_id: 100
+      state: active
