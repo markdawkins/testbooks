@@ -5,8 +5,10 @@
   tasks:
     - name: Create new VLAN 
       cisco.ios.ios_vlans:
-        aggregate:
-        - {vlan_id: "{{ vlan_id }}" , name: "{{ vlan_name }}" , interfaces: "{{ interface }}" }
+        config:
+        - name: VLAN_10
+          vlan_id: 10
+          state: active
       
         - name: save running to startup when modified
           ios_config:
