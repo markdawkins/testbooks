@@ -1,7 +1,8 @@
 ---
 - hosts: all
   gather_facts: false
-  connection: network_cli 
+  connection: network_cli
+  #### ansible_network_os: ios <--add this statement to the AWX TEMPLATE in the Variables section
   tasks:
     - name: Create new VLAN 
       cisco.ios.ios_vlans:
