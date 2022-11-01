@@ -19,7 +19,7 @@
         config:
         - name: "{{vlan_name}}"
           vlan_id: "{{vlan_id}}"
-          state: deleted
+        state: deleted
       
     - name: save running to startup when modified
       ios_config:
