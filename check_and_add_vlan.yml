@@ -1,7 +1,8 @@
 ---
 - hosts: all
   gather_facts: false
-  connection: network_cli 
+  connection: network_cli
+  ansible_network_os: ios
   tasks:
     - name: Collect facts about VLAN "{{ vlan_id }}" on device
       ios_command:
