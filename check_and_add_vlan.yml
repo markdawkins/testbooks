@@ -1,0 +1,30 @@
+---
+- hosts: all
+  gather_facts: false
+  connection: network_cli 
+  tasks:
+    - name: Collect facts about VLAN "{{ vlan_id }}" on device
+      ios_command:
+        commands: show vlan id "{{ vlan_id }}" | section enet
+      register: sh_vlan_output
+      
+      #Check if VLAN is defined, does not do anything if existing   
+    - set_fact:
+        vlan_exists: false
+      when: sh_vlan_output.stdout_lines is defined
+    
+      #Check if VLAN it's undefined, if not then go for below task to Add VLAN
+    - set_fact:
+        vlan_exists: true
+      when: sh_vlan_output.stdout_lines is undefined
+      
+    - name: Create new VLAN 
+      cisco.ios.ios_vlans:
+        config:
+        - name: "{{vlan_name}}"
+          vlan_id: "{{vlan_id}}"
+          state: active
+      
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified
