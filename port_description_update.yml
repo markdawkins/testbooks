@@ -12,9 +12,9 @@
     - name: Update description statement in config  
       ios_config:
         lines:
-        - description test2
+        - description Ansible is a beast
         parents: interface range ethernet 0/1 - 3
-      when: sh_run_output is search("description test1")
+      when: sh_run_output is search("description test2")
 
     - name: save running to startup when modified
       ios_config:
