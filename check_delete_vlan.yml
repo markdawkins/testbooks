@@ -10,9 +10,9 @@
       register: sh_vlan_output
       
       #Check if VLAN is defined 
-    - set_fact:
-        vlan_exists: false
-      when: sh_vlan_output.stdout_lines is defined    
+    #- set_fact:
+    #    vlan_exists: false
+    #  when: sh_vlan_output.stdout_lines is defined    
          
     - name: Delete  VLAN  "{{vlan_name}}"
       cisco.ios.ios_vlans:
