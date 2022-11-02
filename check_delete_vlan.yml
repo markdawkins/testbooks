@@ -4,10 +4,10 @@
   connection: network_cli
   #### ansible_network_os: ios <--add this statement to the AWX TEMPLATE in the Variables section 
   tasks:
-    - name: Collect facts about VLAN "{{ vlan_id }}" on device
-      ios_command:
-        commands: show vlan id "{{ vlan_id }}" | section enet
-      register: sh_vlan_output
+   # - name: Collect facts about VLAN "{{ vlan_id }}" on device
+   #   ios_command:
+   #     commands: show vlan id "{{ vlan_id }}" | section enet
+   #   register: sh_vlan_output
       
       #Check if VLAN is defined 
     #- set_fact:
