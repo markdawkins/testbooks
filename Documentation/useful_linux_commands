@@ -2,4 +2,8 @@
 https://serversitters.com/how-to-delete-all-files-before-a-certain-date-in-linux.html#:~:text=How%20to%20delete%20all%20files%20before%20a%20certain,delete%20everything%20OLDER%20then%205%20days.%20More%20items
 ###command to delete multiple files older than 2 days , mtime is the variable that sets the mount in days 
 
-sudo find . -type f -mtime +2 -maxdepth 1 -exec rm {} \;
+sudo find . -type f -mtime +3 -maxdepth 1 -exec rm {} \;
+
+
+#### Command to count files in a directory ######
+ls | wc -l
