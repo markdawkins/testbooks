@@ -8,6 +8,8 @@
     - name: check permission
       ansible.builtin.file:
         path: "{{ myfile }}"
+        state: directory
+        recurse: yes
         owner: "mark"
         group: "mark"
         mode: '0777'
