@@ -2,7 +2,7 @@
 - name: file permission update
   hosts: all
   vars:
-    myfile: "/media/VOL2/VIDS4/*.*"
+    myfile: "-R /media/VOL2/VIDS4/"
   become: false
   tasks:
     - name: check permission
