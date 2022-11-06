@@ -1,0 +1,13 @@
+---
+- name: file permission update
+  hosts: all
+  vars:
+    myfile: "/media/VOL2/VIDS4/"
+  become: false
+  tasks:
+    - name: check permission
+      ansible.builtin.file:
+        path: "{{ myfile }}"
+        owner: "mark"
+        group: "mark"
+        mode: '0777'
