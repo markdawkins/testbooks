@@ -1,0 +1,30 @@
+---
+- name: Reset all access ports on multiple devices
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Search config for access ports
+      ios_command:
+        commands: show run | inc interface | switchport mode
+      register: sh_interfaces_output
+  
+    - name: Reset access ports  group 1 (1/0/1 - 23)
+      ios_config:
+        lines:
+        - shut
+        - no shut 
+        parents: interface range GigabitEthernet 1/0/1 - 23
+      #when: sh_interfaces_output is search("switchport mode access")
+    
+    #- name: Pause for 1 minute to allow ports to finish
+      #ansible.builtin.pause:
+        #minutes: 1
+      
+    #- name: Reset access ports  group 2 (1/0/24 - 48)
+      #ios_config:
+        #lines:
+        #- shut
+        #- no shut 
+        #parents: interface range GigabitEthernet 1/0/24 - 48
+      #when: sh_interfaces_output is search("switchport mode access")
