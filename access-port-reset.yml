@@ -13,7 +13,7 @@
       ios_config:
         lines:
         - shutdown
-        - descrption Ansible is a Man
+        - description Ansible is a Man
         parents: interface range Ethernet0/1 - 3
       when: sh_interfaces_output is search("switchport mode access")
     
