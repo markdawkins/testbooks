@@ -17,7 +17,10 @@
         lines:
         - no shutdown
         - description Ansible is a Lady
-        parents: interface range Ethernet0/1 - 3
+        parents: 
+        - interface Ethernet0/1
+        - interface Ethernet0/2
+        - interface Ethernet0/3
       when: sh_interfaces_output is search("static access")
     
     #- name: Pause for 1 minute to allow ports to finish
