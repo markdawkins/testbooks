@@ -16,7 +16,7 @@
         - no shutdown
         # parents: interface range Ethernet0/1 - 3
         parents: interface loopback0
-      #when: sh_interfaces_output is search("switchport mode access")
+      when: sh_interfaces_output is search("switchport mode access")
     
     #- name: Pause for 1 minute to allow ports to finish
       #ansible.builtin.pause:
