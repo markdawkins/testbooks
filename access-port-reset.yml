@@ -9,7 +9,7 @@
         commands: show run | inc interface | switchport mode
       register: sh_interfaces_output
   
-    - name: Reset access ports  group 1 (1/0/1 - 23)
+    - name: Reset access ports  group 1 (Ehternet0/1 - 3)
       ios_config:
         lines:
         - shut
