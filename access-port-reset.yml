@@ -8,15 +8,17 @@
       ios_command:
         commands: 
         - show interface e0/1 switchport | inc Administrative Mode
+        - show interface e0/2 switchport | inc Administrative Mode
       register: sh_interfaces_output
   
     - name: Reset access port
       ios_config:
         lines:
-        - shutdown
-        - description Access Port2 
+        - no shutdown
+        - description Access Port3
         parents: 
         - interface Ethernet0/1
+        - interface Ethernet0/2
       when: sh_interfaces_output is search("static access")
     
     #- name: Pause for 1 minute to allow ports to finish
