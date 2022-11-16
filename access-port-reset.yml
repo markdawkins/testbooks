@@ -14,7 +14,7 @@
         lines:
         - shutdown
         - no shutdown
-        parents: interface range looback0 - 2        
+        parents: interface looback0       
       when: sh_interfaces_output is search("switchport mode access")
     
     #- name: Pause for 1 minute to allow ports to finish
