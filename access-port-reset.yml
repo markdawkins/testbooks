@@ -13,8 +13,8 @@
     - name: Reset access por
       ios_config:
         lines:
-        - no shutdown
-        - description Access Port 
+        - shutdown
+        - description Access Port2 
         parents: 
         - interface Ethernet0/1
       when: sh_interfaces_output is search("static access")
