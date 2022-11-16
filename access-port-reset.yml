@@ -6,7 +6,10 @@
   tasks:
     - name: Search config for access ports
       ios_command:
-        commands: show run | inc interface | switchport mode
+        commands: 
+        - show interface e0/1 switchport | inc Administrative Mode
+        - show interface e0/2 switchport | inc Administrative Mode
+        - show interface e0/3 switchport | inc Administrative Mode
       register: sh_interfaces_output
   
     - name: Reset access ports  group 1 (Ethernet0/1 - 3)
