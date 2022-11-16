@@ -14,7 +14,7 @@
         lines:
         - shut
         - no shut 
-        parents: interface range GigabitEthernet 1/0/1 - 23
+        parents: interface range Ethernet0/1 - 3
       #when: sh_interfaces_output is search("switchport mode access")
     
     #- name: Pause for 1 minute to allow ports to finish
