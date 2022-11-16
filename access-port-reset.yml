@@ -10,7 +10,7 @@
         - show interface e0/1 switchport | inc Administrative Mode
       register: sh_interfaces_output
   
-    - name: Reset access por
+    - name: Reset access port
       ios_config:
         lines:
         - shutdown
