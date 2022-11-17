@@ -9,15 +9,21 @@
         commands: 
         - show run interface Et0/1
       register: E1
+        - show run interface Et0/3
+      register: E3
     #- debug: var=sh_interfaces_output
   
     - name: Reset access port
       cisco.ios.ios_config:
         lines:
-          - no shutdown
-          - description Access Port4
-        parents: interface Ethernet0/1        
-      when: E1 is search("mode access")
+          - shutdown
+          - description Access Port5
+        parents: 
+        - interface Ethernet0/1 
+        - interface Ethernet0/3
+      when: 
+      - E1 is search("mode access")
+      - E3 is search("mode access")
       
       
       
