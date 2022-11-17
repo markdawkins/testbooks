@@ -7,11 +7,6 @@
     - name: Search config for access ports
       ios_command:
         commands: show run | inc interface | switchport mode
-        parents: '{{ item }}'     
-      with_items:
-      - Interface Ethernet0/1
-      - Interface Ethernet0/2
-      - Interface Ethernet0/3
       register: sh_interfaces_output
       
     - name: Reset access ports
