@@ -8,9 +8,9 @@
       ios_command:
         commands: 
         - show run interface Et0/1
-      register: E1
+      register: port_1
         - show run interface Et0/3
-      register: E3
+      register: port_3
     #- debug: var=sh_interfaces_output
   
     - name: Reset access port
@@ -21,7 +21,7 @@
         parents: 
         - interface Ethernet0/1 
         - interface Ethernet0/3
-      when: E1 is search("mode access")
+      when: port_1 is search("mode access")
       #- E3 is search("mode access")
       
       
