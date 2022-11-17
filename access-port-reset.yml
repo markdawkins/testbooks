@@ -7,7 +7,7 @@
     - name: Search config for access ports
       ios_command:
         commands: 
-        - show interface e0/1 switchport | inc Administrative Mode
+        - show interface Ethernet0/1 switchport | inc Administrative Mode
       register: sh_interfaces_output
     - debug: var=sh_interfaces_output
   
