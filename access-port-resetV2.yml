@@ -20,7 +20,6 @@
           - description Access TEST7
         parents: 
         - interface Ethernet0/1 
-        - interface Ethernet0/3
       when: E1 is search("mode access")
       #- E3 is search("mode access")
       
