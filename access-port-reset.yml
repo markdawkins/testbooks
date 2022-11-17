@@ -9,6 +9,7 @@
         commands: 
         - show interface e0/1 switchport | inc Administrative Mode
       register: sh_interfaces_output
+    - debug: var=sh_interfaces_output
   
     - name: Reset access port
       cisco.ios.ios_config:
