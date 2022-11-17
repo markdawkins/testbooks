@@ -8,17 +8,20 @@
       ios_command:
         commands: 
         - show run interface Et0/1
-      register: sh_interfaces_output
-    - debug: var=sh_interfaces_output
+      register: E1
+    #- debug: var=sh_interfaces_output
   
     - name: Reset access port
       cisco.ios.ios_config:
         lines:
           - no shutdown
-          - description Access Port3
-        parents: interface range Ethernet0/1 - 3
-        
-      when: sh_interfaces_output is search("mode access")
+          - description Access Port4
+        parents: interface Ethernet0/1        
+      when: E1 is search("mode access")
+      
+      
+      
+      
     
     #- name: Pause for 1 minute to allow ports to finish
       #ansible.builtin.pause:
