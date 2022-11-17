@@ -1,0 +1,27 @@
+---
+- name: Reset all access ports on multiple devices
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Search config for access ports
+      ios_command:
+        commands: show run | inc interface | switchport mode
+        parents: '{{ item }}'     
+      with_items:
+      - Interface Ethernet0/1
+      - Interface Ethernet0/2
+      - Interface Ethernet0/3
+      register: sh_interfaces_output
+      
+    - name: Reset access ports
+      ios_config:
+        lines:
+        - shutdown
+        - description  TEST1
+        parents: '{{ item }}'
+      with_items:
+      - Interface Ethernet0/1
+      - Interface Ethernet0/2
+      - Interface Ethernet0/3
+      when: sh_interfaces_output is search("switchport mode access")
