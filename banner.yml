@@ -5,10 +5,13 @@
   connection: network_cli
     
   tasks:
-    - name: "Configure MOTD banner"
+    - name: Configure MOTD banner
       cisco.ios.ios_banner:
+      banner: motd
       text:
-        This s my banner for all of my devices in the network
+        This is my banner 
+        for all of my devices 
+        in the network
       state: present
     
       register: my_banner
