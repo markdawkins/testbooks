@@ -6,7 +6,7 @@
   connection: netowrk_cli
 
   tasks:
-    - name: "Loop through IP info"
+    - name: "Loop through Serial numbers"
       debug:
         msg: "{{ [ansible_net_hostname] }} has a serial number {{ item }} "
       loop: "{{ [ansible_net_serialnum] }}"
