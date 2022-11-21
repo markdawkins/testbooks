@@ -1,7 +1,7 @@
 ---
 - name: MY BANNER PLAYBOOK
   hosts: all
-  gather_facts: no
+  gather_facts: false
   connection: network_cli
     
   tasks:
