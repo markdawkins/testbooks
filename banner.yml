@@ -1,5 +1,5 @@
 ---
-- name: " MY BANNER PLAYBOOK"
+- name: MY BANNER PLAYBOOK
   hosts: All
   gather_facts: false
   connection: network_cli
