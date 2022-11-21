@@ -1,0 +1,13 @@
+---
+
+- name: "Loop test"
+  hosts: switches, routers
+  gather_facts: true
+  connection: netowrk_cli
+
+  tasks:
+    - name: "Loop through IP info"
+      debug:
+        msg: "{{ [ansible_net_hostname] }} has a serial number {{ item }} "
+      loop: "{{ [ansible_net_serialnum] }}"
+
