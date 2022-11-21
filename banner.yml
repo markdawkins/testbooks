@@ -12,7 +12,7 @@
       state: present
     
       register: my_banner
-   - debug: var=my_banner
+    -  debug: var=my_banner
          
     
       
