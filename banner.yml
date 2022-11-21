@@ -1,6 +1,6 @@
 ---
 - name: MY BANNER PLAYBOOK
-  hosts: All
+  hosts: all
   gather_facts: false
   connection: network_cli
     
