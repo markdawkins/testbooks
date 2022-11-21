@@ -1,11 +1,11 @@
 ---
-- name: NTP CONFIG 
+- name: "NTP CONFIG" 
   hosts: all
   gather_facts: false
   connection: network_cli
   
   tasks:
-    - name: Loop through ntp servers and configure
+    - name: "Loop through ntp servers and configure"
       vars:
         myservers:
           - "1.1.1.1"
