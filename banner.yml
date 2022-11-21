@@ -1,3 +1,4 @@
+---
 - name: " MY BANNER PLAYBOOK"
   hosts: All
   gather_facts: false
