@@ -7,15 +7,15 @@
   tasks:
     - name: Configure MOTD banner
       cisco.ios.ios_banner:
-      banner: motd
-      text:
-        This is my banner 
-        for all of my devices 
-        in the network
-      state: present
+        banner: motd
+        text:
+          This is my banner 
+          for all of my devices 
+          in the network
+        state: present
     
       register: my_banner
-    -  debug: var=my_banner
+    - debug: var=my_banner
          
     
       
