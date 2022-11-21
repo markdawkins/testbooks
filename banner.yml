@@ -2,7 +2,7 @@
 - name: MY BANNER PLAYBOOK
   hosts: all
   gather_facts: false
-  connection: local
+  connection: network_cli
     
   tasks:
     - name: Configure MOTD banner
