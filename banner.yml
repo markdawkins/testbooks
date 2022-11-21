@@ -6,7 +6,7 @@
     
   tasks:
     - name: Configure MOTD banner
-      ios_banner:
+      cisco.ios.ios_banner:
         banner: motd
         text:
           This is my banner 
