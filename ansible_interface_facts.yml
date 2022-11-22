@@ -11,4 +11,4 @@
         #msg: "{{ ansible_facts }}"
         msg: "Interface {{item ['key'] }} has an ip address of  {{ item['value']['ipv4'][0] ['address'] }} "
       loop: "{{ ansible_net_interfaces | dict2items }}"
-      when: item['value'][ipv4] != []
+      when: item['value']['ipv4'] != []
