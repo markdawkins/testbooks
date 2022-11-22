@@ -1,0 +1,14 @@
+---
+
+- name: "loop to gather info part 2"
+  hosts: all
+  gather_facts: true
+  connection: network_cli
+
+  tasks:
+    - name: "Grab a list of interfaces with an ip address for each device"
+      debug:
+        #msg: "{{ ansible_facts }}"
+        msg: "Interface {{item ['key'] }} has an ip address of  {{ item['value']['ipv4'][0] ['address'] }} "
+      loop: "{{ ansible_net_interfaces | dict2items }}"
+      when: item['value'][ipv4] != []
