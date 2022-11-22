@@ -1,0 +1,13 @@
+---
+
+- name: "loop to gather info part 2"
+  hosts: all
+  gather_facts: true
+  connection: network_cli
+
+  tasks:
+    - name: "Tasl 1"
+      debug:
+        msg: "{{ ansible_facts }}"
+        #msg: "Interface {{item ['key'] }} has a number {{ item['value']['ipv4'] }} "
+      loop: "{{ ansible_net_interfaces | dict2items }}"
