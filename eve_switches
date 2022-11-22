@@ -1,5 +1,10 @@
-[eve_swtiches]
+[eve_switches]
 192.168.1.82
 192.168.1.83
 192.168.1.84
 192.168.1.85
+
+[eve_switches:vars]
+ansible_become=yes
+ansible_become_method=enable
+ansible_network_os=cisco.ios.ios
