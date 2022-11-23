@@ -1,0 +1,19 @@
+---
+- name: Reset all access ports on multiple devices
+  hosts: all
+  gather_facts: false
+  connection: network_cli
+  tasks:
+    - name: Search config for access ports
+      ios_command:
+        commands: 
+        - show interface loopback0
+      register: sh_interfaces_output
+    - debug: var=sh_interfaces_output
+  
+    - name: configure ports 
+      cisco.ios.ios_config:
+        lines:
+          - description loopback ports updated
+        parents: interface range loopback 0 - 3        
+      when: sh_interfaces_output is search("interface loopback3")
