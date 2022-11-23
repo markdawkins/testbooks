@@ -12,7 +12,7 @@
           trunk:
             #allowed_vlans: All
             #native_vlan: 20
-            pruning_vlans: 10,20
+            #pruning_vlans: 10,20
             encapsulation: dot1q
     state: merged
     
@@ -24,7 +24,7 @@
           trunk:
             #allowed_vlans: All
             #native_vlan: 20
-            pruning_vlans: 10,20
+            #pruning_vlans: 10,20
             encapsulation: dot1q
     state: merged
     
@@ -36,7 +36,7 @@
           trunk:
             #allowed_vlans: All
             #native_vlan: 20
-            pruning_vlans: 10,20
+            #pruning_vlans: 10,20
             encapsulation: dot1q
     state: merged
     
@@ -48,7 +48,7 @@
           trunk:
             #allowed_vlans: All
             #native_vlan: 20
-            pruning_vlans: 10,20
+            #pruning_vlans: 10,20
             encapsulation: dot1q
     state: merged
     
