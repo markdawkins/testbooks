@@ -4,29 +4,45 @@
   gather_facts: false
   connection: network_cli
   tasks:
+    - name: Delete interfaces 
+      cisco.ios.ios_interfaces:
+        config:
+        - name: "{{trunk_port1}}"
+        state: deleted
+    
+    - name: Delete interfaces
+      cisco.ios.ios_interfaces:
+        config:
+        - name: "{{trunk_port2}}"
+        state: deleted
+    
+    - name: Delete interfaces
+      cisco.ios.ios_interfaces:
+        config:
+        - name: "{{trunk_port3}}"
+        state: deleted
+    
+    - name: Delete interfaces
+      cisco.ios.ios_interfaces:
+        config:
+        - name: "{{trunk_port4}}"
+        state: delete 
+  
     - name: Enable trunking on port
       cisco.ios.ios_l2_interfaces:
         config:
         - name: "{{trunk_port1}}"
           mode: trunk
           trunk:
-            #allowed_vlans: All
-            #native_vlan: 20
-            #pruning_vlans: 10,20
             encapsulation: dot1q
-    #state: merged
-    
+        
     - name: Enable trunking on port
       cisco.ios.ios_l2_interfaces:
         config:
         - name: "{{trunk_port2}}"
           mode: trunk
           trunk:
-            #allowed_vlans: All
-            #native_vlan: 20
-            #pruning_vlans: 10,20
-            encapsulation: dot1q
-    #state: merged
+            encapsulation: dot1q    
     
     - name: Enable trunking on port
       cisco.ios.ios_l2_interfaces:
@@ -34,11 +50,7 @@
         - name: "{{trunk_port3}}"
           mode: trunk
           trunk:
-            #allowed_vlans: All
-            #native_vlan: 20
-            #pruning_vlans: 10,20
             encapsulation: dot1q
-    #state: merged
     
     - name: Enable trunking on port
       cisco.ios.ios_l2_interfaces:
@@ -46,9 +58,4 @@
         - name: "{{trunk_port4}}"
           mode: trunk
           trunk:
-            #allowed_vlans: All
-            #native_vlan: 20
-            #pruning_vlans: 10,20
             encapsulation: dot1q
-    #state: merged
-    
