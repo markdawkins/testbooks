@@ -16,4 +16,4 @@
         lines:
           - description loopback ports updated
         parents: interface range loopback 0 - 3        
-      when: sh_interfaces_output is search("interface Loopback3")
+      when: sh_interfaces_output is search("interface Loopback4")
