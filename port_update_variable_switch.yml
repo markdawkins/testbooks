@@ -14,6 +14,6 @@
     - name: configure ports 
       cisco.ios.ios_config:
         lines:
-          - description loopback ports updated
+          - description loopbacks updated again
         parents: interface range loopback 0 - 3        
-      when: sh_interfaces_output is search("interface Loopback4")
+      when: sh_interfaces_output is search("interface Loopback3")
