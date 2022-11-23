@@ -1,0 +1,19 @@
+---
+- hosts: all
+  gather_facts: False
+  connection: local
+  
+  tasks:
+    - name: show ip route output
+      ios_command:
+        commands: show ip route 
+      register: route_output
+      
+    - name: configure default route 
+      ios_config:
+        lines: ip route 0.0.0.0 0.0.0.0 192.168.1.1
+      when: route_output is search("Gateway of last resort is not set")
+      
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified      

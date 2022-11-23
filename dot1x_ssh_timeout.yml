@@ -1,0 +1,21 @@
+---
+- name: Update existing ssh timeout on interfaces from 10 to 7
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Search config for condition 
+      ios_command:
+        commands: show run | inc dot1x timeout
+      register: sh_run_output
+  
+    - name: Update ssh timeout on interfaces  
+      ios_config:
+        lines:
+        - dot1x ssh timeout 7
+        parents: interface range GigabitEthernet  1/0/1 - 48
+      when: sh_run_output is search("dot1x ssh timeout 10")
+
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified

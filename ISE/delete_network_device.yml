@@ -1,0 +1,13 @@
+---
+- hosts: ise_servers
+  gather_facts: false
+  tasks:
+    - name: Delete a network device by name
+      cisco.ise.network_device:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        #ise_verify: "{{ ise_verify }}"
+        state: absent
+        name: "{{ device_name }}"
+      register: result

@@ -1,0 +1,21 @@
+---
+- name: Add Log Host
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Search config for condition 
+      ios_command:
+        commands: show run | inc description 
+      register: sh_run_output
+  
+    - name: Update description statement in config  
+      ios_config:
+        lines:
+        - description Ansible is a lady
+        parents: interface range ethernet 0/1 - 3
+      when: sh_run_output is search("description test2")
+
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified

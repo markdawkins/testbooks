@@ -1,7 +1,7 @@
 ---
 - name: backup commands
   hosts: all
-  gather_facts: false
+  gather_facts: False
   connection: local
   tasks:
     - name: show run 
@@ -9,9 +9,10 @@
         commands:
           - show run
       register: config
-
-    - name: save output to /home/ansible/backups 
+  
+    - name: save output to /home/ansible/backups
       copy: 
-         content: "{{ config.stdout[0] }}"
-         dest: "/home/ansible/backups/show_run_{{ inventory_hostname }}.txt"
+        content: "{{ config.stdout[0] }}"
+        dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
 ...
+

@@ -1,0 +1,26 @@
+---
+- hosts: all
+  gather_facts: false
+  connection: network_cli
+  #### ansible_network_os: ios <--add this statement to the AWX TEMPLATE in the Variables section 
+  tasks:
+   # - name: Collect facts about VLAN "{{ vlan_id }}" on device
+   #   ios_command:
+   #     commands: show vlan id "{{ vlan_id }}" | section enet
+   #   register: sh_vlan_output
+      
+      #Check if VLAN is defined 
+    #- set_fact:
+    #    vlan_exists: false
+    #  when: sh_vlan_output.stdout_lines is defined    
+         
+    - name: Delete  VLAN  "{{vlan_name}}"
+      cisco.ios.ios_vlans:
+        config:
+        - name: "{{vlan_name}}"
+          vlan_id: "{{vlan_id}}"
+        state: deleted
+      
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified
