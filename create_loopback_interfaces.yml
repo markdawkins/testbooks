@@ -7,18 +7,18 @@
     - name: Merge provided configuration with device configuration
       cisco.ios.ios_l3_interfaces:
         config:
-        - name: loopback0
+        - name: Loopback0
           ipv4:
           - address: "{{loopback0_ip}}" 
         
-        - name: loopback1
+        - name: Loopback1
           ipv4:
           - address: "{{loopback1_ip}}" 
         
-        - name: loopback2
+        - name: Loopback2
           ipv4:
           - address: "{{loopback2_ip}}" 
-        - name: loopback3
+        - name: Loopback3
           ipv4:
           - address: "{{loopback3_ip}}" 
         state: merged
