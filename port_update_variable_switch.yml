@@ -7,7 +7,7 @@
     - name: Search config for access ports
       ios_command:
         commands: 
-        - show interface Loopback3
+        - show run interface Loopback3
       register: sh_interfaces_output
     - debug: var=sh_interfaces_output
   
