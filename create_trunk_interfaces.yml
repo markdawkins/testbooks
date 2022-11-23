@@ -26,7 +26,7 @@
             #native_vlan: 20
             #pruning_vlans: 10,20
             encapsulation: dot1q
-    state: merged
+    #state: merged
     
     - name: Enable trunking on port
       cisco.ios.ios_l2_interfaces:
