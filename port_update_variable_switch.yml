@@ -4,7 +4,7 @@
   gather_facts: false
   connection: network_cli
   tasks:
-    - name: Search config for access ports
+    - name: Search config to determine the number of loopback ports
       ios_command:
         commands: 
         - show run interface Loopback3
