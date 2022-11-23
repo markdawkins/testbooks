@@ -9,16 +9,16 @@
         config:
         - name: loopback0
           ipv4:
-          - address: "{{loopback0_ip}}"/24
+          - address: "{{loopback0_ip}}" /24
         
         - name: loopback1
           ipv4:
-          - address: "{{loopback1_ip}}"/24
+          - address: "{{loopback1_ip}}" /24
         
         - name: loopback2
           ipv4:
-          - address: "{{loopback2_ip}}"/24
+          - address: "{{loopback2_ip}}" /24
         - name: loopback3
           ipv4:
-          - address: "{{loopback3_ip}}"/24
+          - address: "{{loopback3_ip}}" /24
         state: merged
