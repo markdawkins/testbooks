@@ -7,7 +7,7 @@
     - name: Search config for access ports
       ios_command:
         commands: 
-        - show interface loopback0
+        - show interface Loopback3
       register: sh_interfaces_output
     - debug: var=sh_interfaces_output
   
@@ -16,4 +16,4 @@
         lines:
           - description loopback ports updated
         parents: interface range loopback 0 - 3        
-      when: sh_interfaces_output is search("interface loopback3")
+      when: sh_interfaces_output is search("interface Loopback3")
