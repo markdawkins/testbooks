@@ -2,7 +2,7 @@
 - name: Issue show commands to find up time
   hosts: all
   gather_facts: false
-  connection: network_cli
+  connection: local
   tasks:
     - name: Show ver inc uptime 
       ios_command:
