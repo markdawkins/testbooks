@@ -1,7 +1,7 @@
 ---
 - name: backup commands
   hosts: all
-  gather_facts: True
+  gather_facts: False
   connection: local
   tasks:
     - name: show run 
@@ -10,20 +10,20 @@
           - show run
       register: config
         
-    - name: "Collect facts about local host"
-      ansible.builtin.setup:
-        filter:
-          - "ansible_date_time.date"
+    #- name: "Collect facts about local host"
+    #  ansible.builtin.setup:
+    #    filter:
+    #      - "ansible_date_time.date"
     
-    - name: "Create new directory for backups"
-      file:
-        path: "/home/ansible/backups/{{ TD }}"
-        state: directory
-      run_once: true  
+    #- name: "Create new directory for backups"
+      #file:
+      #  path: "/home/ansible/backups/{{ TD }}"
+      #  state: directory
+      #run_once: true  
     
     - name: save output to /home/ansible/backups
       copy: 
         content: "{{ config.stdout[0] }}"
-        dest: "/home/ansible/backups/{{ TD }}/{{inventory_group}}_{{ inventory_hostname }}.txt"
+        dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
 ...
 
