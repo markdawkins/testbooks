@@ -10,7 +10,7 @@
           - show run
       register: config
       debug:
-        msg: config
+        msg: "{{config}}"
   
     - name: save output to /home/ansible/backups
       copy: 
