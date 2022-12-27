@@ -1,6 +1,6 @@
 ---
 - name: backup commands
-  hosts: all
+  hosts: localhost
   gather_facts: False
   connection: local
   tasks:
