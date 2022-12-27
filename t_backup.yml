@@ -1,5 +1,6 @@
 - name: "Test PLAYBOOK"
   hosts: all
+  connection: local 
   tasks:
     - name: "Collect facts about local host"
       ansible.builtin.setup:
