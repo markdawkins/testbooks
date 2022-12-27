@@ -1,11 +1,15 @@
 - name: "Test PLAYBOOK"
   hosts: all
+  gather_facts: true
   connection: local 
+  
   tasks:
     - name: "Collect facts about local host"
       ansible.builtin.setup:
         filter:
+          - "ansible"           
       register: output
+      
     - name: "Print stuff"
       debug:
         msg: "{{ output.ansible_facts.ansible_date_time.date }}"
