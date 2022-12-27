@@ -9,6 +9,8 @@
         commands:
           - show run
       register: config
+      debug:
+        msg: config
   
     - name: save output to /home/ansible/backups
       copy: 
