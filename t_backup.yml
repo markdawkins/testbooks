@@ -1,6 +1,5 @@
 - name: "Test PLAYBOOK"
   hosts: all
-  gather_facts: true
   connection: local 
   
   tasks:
