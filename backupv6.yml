@@ -19,7 +19,7 @@
       run_once: true  
     
    
-- name: "Play2: Bacfkup up Configurations"
+- name: "Play2: Backup up Configurations"
   hosts: all
   connection: local 
       
@@ -27,7 +27,7 @@
     - name: show run 
       ios_command:
         commands:
-        - show run
+          - show run
       register: config
               
 
