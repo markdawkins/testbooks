@@ -21,7 +21,7 @@
    
 - name: "Play2: Backup up Configurations"
   hosts: all
-  connection: local 
+  connection: network_cli
       
   tasks:
     - name: show run 
