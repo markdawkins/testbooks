@@ -6,7 +6,7 @@
     - name: "Task 1 of Play1: Collect facts about local host"
       ansible.builtin.setup:
         filter:
-          - "ansible_date_time.date"
+          - "ansible_date_time"
           
     - name: "Task2 of Play1:: Recording Variable" 
       set_fact:
