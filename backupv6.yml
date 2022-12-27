@@ -12,9 +12,9 @@
       set_fact:
         TD: "{{ ansible_date_time.date }}"
     
-    - name: "Create new directories"
+    - name: "Task 3 of lay 1: Create new directories"
       file:
-        path: "Task3 of Play1:/home/ansible/backups/{{ TD }}"
+        path: "/home/ansible/backups/{{ TD }}"
         state: directory
       run_once: true  
     
