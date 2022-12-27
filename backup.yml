@@ -9,12 +9,11 @@
         commands:
           - show run
       register: config
-      debug:
-        msg: "{{config}}"
-  
+        
     - name: save output to /home/ansible/backups
       copy: 
         content: "{{ config.stdout[0] }}"
-        dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
+        dest: "/home/ansible/backups/"
+        #dest: "/home/ansible/backups/{{inventory_group}}_{{ inventory_hostname }}.txt"
 ...
 
