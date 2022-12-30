@@ -1,9 +1,9 @@
 ---
-- name: "Play1"
+- name: Play1
   hosts: all
   connection: network_cli
   tasks: 
-    - name: " Play1_1: Gather all Legacy facts "
+    - name: Play1_1: Gather all Legacy facts
       cisco.ios.ios_facts:
         gather_subset: 
         - config 
