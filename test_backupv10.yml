@@ -3,10 +3,7 @@
   hosts: all
   connection: network_cli
   tasks: 
-    - name: Play1_1 Gather all Legacy facts
-      ios_facts:
-        gather_subset: 
-        - config 
-      register: result
-      debug:
-        msg: "{{ result }}"
+    - name: Gather only the config and default facts
+      cisco.ios.ios_facts:
+        gather_subset:
+        - config
