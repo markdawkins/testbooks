@@ -2,7 +2,9 @@
 192.168.1.154
 192.168.1.155
 192.168.1.158
-192.168.1.169
+192.168.1.159
+192.168.1.160
+192.168.1.161
 [proxmox_routers:vars]
 ansible_become=yes
 ansible_become_method=enable
