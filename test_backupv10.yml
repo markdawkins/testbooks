@@ -33,7 +33,7 @@
     - name: Gather interfaces resource and minimal legacy facts
       cisco.ios.ios_facts:
         gather_subset: min
-      gather_network_resources: interfaces
+        gather_network_resources: interfaces
 
    - name: Gather L2 interfaces resource and minimal legacy facts
      cisco.ios.ios_facts:
