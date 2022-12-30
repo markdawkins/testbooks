@@ -8,31 +8,31 @@
         gather_subset: 
         - config
    
-   - name: Gather only the config and default facts
-     cisco.ios.ios_facts:
-       gather_subset: all   
+    - name: Gather only the config and default facts
+      cisco.ios.ios_facts:
+        gather_subset: all   
         
-   - name: Do not gather hardware facts
-     cisco.ios.ios_facts:
-       gather_subset:
-       - '!hardware'
+    - name: Do not gather hardware facts
+      cisco.ios.ios_facts:
+        gather_subset:
+        - '!hardware'
 
-   - name: Gather legacy and resource facts
-     cisco.ios.ios_facts:
-       gather_subset: all
-       gather_network_resources: all
-   
-  - name: Gather only the interfaces resource facts and no legacy facts
-    cisco.ios.ios_facts:
-      gather_subset:
-      - '!all'
-      - '!min'
-      gather_network_resources:
-      - interfaces
+    - name: Gather legacy and resource facts
+      cisco.ios.ios_facts:
+        gather_subset: all
+        gather_network_resources: all
 
-  - name: Gather interfaces resource and minimal legacy facts
-    cisco.ios.ios_facts:
-      gather_subset: min
+    - name: Gather only the interfaces resource facts and no legacy facts
+      cisco.ios.ios_facts:
+        gather_subset:
+        - '!all'
+        - '!min'
+        gather_network_resources:
+        - interfaces
+
+    - name: Gather interfaces resource and minimal legacy facts
+      cisco.ios.ios_facts:
+        gather_subset: min
       gather_network_resources: interfaces
 
   - name: Gather L2 interfaces resource and minimal legacy facts
