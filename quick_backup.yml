@@ -1,7 +1,7 @@
 ---
 - name: "backup files to curret directory in backup folder"
   hosts: all
-  gather_facts: False
+  #gather_facts: False
   connection: network_cli 
   tasks:
     - name: Backup current switch config (ios)
