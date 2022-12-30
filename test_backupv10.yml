@@ -1,6 +1,7 @@
 ---
 - name: Play1
   hosts: all
+  gather_facts: True
   connection: network_cli
   tasks: 
     - name: Gather only the config and default facts
