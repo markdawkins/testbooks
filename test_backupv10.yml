@@ -1,9 +1,10 @@
 ---
 - name: Play1
   hosts: all
-  connection: network_cli
+  connection: local
   tasks: 
     - name: Gather only the config and default facts
       cisco.ios.ios_facts:
-        gather_subset: all
+        gather_subset: 
+        - config
         
