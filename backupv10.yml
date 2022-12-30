@@ -5,7 +5,8 @@
   tasks: 
     - name: "Play1_1: Gather all Legacy facts"
       cisco.ios.ios_facts:
-        gather_subset: all
+        gather_subset: 
+        - config 
       register: result
     
     - name: "Play1_2: Create new  directory"
