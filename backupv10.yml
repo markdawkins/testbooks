@@ -11,7 +11,7 @@
     
     - name: "Play1_2: Create new  directory"
       file:
-        path: "/home/mark/ansible/backups/{{ansible_net_model}}"
+        path: "/home/ansible/backups/{{ansible_net_model}}"
         state: directory
       run_once: true        
 
@@ -28,7 +28,7 @@
     
     - name: "Task 2_1: Create new host directory"
       file:
-        path: "/home/mark/ansible/backups/{{ansible_net_model}}/{{ ansible_net_hostname }}"
+        path: "/home/ansible/backups/{{ansible_net_model}}/{{ ansible_net_hostname }}"
         state: directory
       run_once: false  
 
@@ -36,7 +36,7 @@
     - name: "Task 2_2: Save output"
       copy: 
         content: "{{ config.stdout[0] }}"
-        dest: "/home/mark/ansible/backups/{{ansible_net_model}}/{{ ansible_net_hostname }}/running_cfg.txt"
+        dest: "/home/ansible/backups/{{ansible_net_model}}/{{ ansible_net_hostname }}/running_cfg.txt"
         
 
 - name: "Play3: Show start "
@@ -51,7 +51,7 @@
     
     - name: "Task 3_1:  Create new host directory"
       file:
-        path: "/home/mark/ansible/backups/{{ansible_net_model}}/{{ ansible_net_hostname }}"
+        path: "/home/ansible/backups/{{ansible_net_model}}/{{ ansible_net_hostname }}"
         state: directory
       run_once: false  
 
@@ -59,4 +59,4 @@
     - name: "Tasks 3_2: Save output "
       copy: 
         content: "{{ config_start.stdout[0] }}"
-        dest: "/home/mark/ansible/backups/{{ansible_net_model}}/{{ ansible_net_hostname }}/startup_cfg.txt"
+        dest: "/home/ansible/backups/{{ansible_net_model}}/{{ ansible_net_hostname }}/startup_cfg.txt"
