@@ -4,7 +4,7 @@
   connection: network_cli
   tasks: 
     - name: Play1_1 Gather all Legacy facts
-      cisco.ios.ios_facts:
+      ios_facts:
         gather_subset: 
         - config 
       register: result
