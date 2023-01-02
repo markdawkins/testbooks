@@ -15,3 +15,8 @@
         parents: ip access-list extended test
         before: no ip access-list extended test
         match: exact
+      register: result 
+      
+    - name: Print results 
+      debug:
+        msg:"{{ result }}"
