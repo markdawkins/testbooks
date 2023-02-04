@@ -1,0 +1,82 @@
+---
+- name: file permission update
+  hosts: all
+  vars:
+    myfile: "/media/"
+  become: false
+  tasks:
+    - name: check permission
+      ansible.builtin.file:
+        path: "{{ myfile }}"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'
+    - name: check permission folder 3
+      ansible.builtin.file:
+        path: "/media/VOL2/VIDS3/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'
+    - name: check permission folder 2
+      ansible.builtin.file:
+        path: "/media/VOL2/VIDS2/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'
+    - name: check permission folder 4
+      ansible.builtin.file:
+        path: "/media/VOL2/VIDS4/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'
+    - name: check permission folder 5
+      ansible.builtin.file:
+        path: "/media/VOL2/VIDS5/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'
+    - name: check permission folder 6
+      ansible.builtin.file:
+        path: "/media/VOL2/VIDS6/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'  
+   
+    - name: check permission folder 7
+      ansible.builtin.file:
+        path: "/media/VOL2/VIDS7/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'
+        
+     - name: check permission folder 8
+       ansible.builtin.file:
+         path: "/media/VOL2/VIDS8/"
+         state: directory
+         recurse: yes
+         owner: "mark"
+         group: "mark"
+         mode: '0777'  
+         
+     - name: check permission folder 9
+       ansible.builtin.file:
+         path: "/media/VOL2/VIDS9/"
+         state: directory
+         recurse: yes
+         owner: "mark"
+         group: "mark"
+         mode: '0777'      
