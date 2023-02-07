@@ -7,7 +7,7 @@
     - name: Remove ISE from  1st group of ports 
       ios_config:
         lines:
-        - no authentication event server dead action reinitialize vlan 
+        # - no authentication event server dead action reinitialize vlan 
         - no authentication event server dead action authorize voice 
         - no authentication event server alive action reinitialize     
         - no authentication host-mode multi-auth
