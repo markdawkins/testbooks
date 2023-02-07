@@ -21,7 +21,7 @@
         - no dot1x pae authenticator
         - no dot1x timeout tx-period
         - no dot1x max-reauth-req 1     
-        - no authentication event server dead action reinitialize vlan {{vlan_id}}
+        - no authentication event server dead action reinitialize vlan{{vlan_id}}
         parents: interface range {{port_range_1}}
         
     - name: Pause for 1 minute to allow ports to finish
