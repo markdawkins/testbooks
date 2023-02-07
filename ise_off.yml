@@ -8,7 +8,6 @@
       ios_config:
         lines:
         - no description
-        - no authentication event server dead action reinitialize vlan {{vlan_id}}    
         - no authentication event server dead action authorize voice 
         - no authentication event server alive action reinitialize        
         parents: interface range {{port_range_1}}
