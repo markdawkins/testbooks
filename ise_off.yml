@@ -24,7 +24,7 @@
         - no dot1x pae authenticator
         - no dot1x timeout tx-period
         - no dot1x max-reauth-req 1
-        parents: interface range ["{{port_range_1}}"]
+        parents: interface range "{{port_range_1}}"
         
     - name: Pause for 1 minute to allow ports to finish
       ansible.builtin.pause:
