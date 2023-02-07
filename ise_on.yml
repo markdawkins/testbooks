@@ -1,5 +1,10 @@
 ---
-- name: Replace  ISE on 1st group of ports 
+- name: Disable ISE from a  range of ports  
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Replace  ISE on 1st group of ports 
       ios_config:
         lines:
         - authentication control-direction in 
