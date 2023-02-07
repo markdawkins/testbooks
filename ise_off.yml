@@ -8,21 +8,7 @@
       ios_config:
         lines:
         - no description
-        - no authentication event server dead action reinitialize vlan {{vlan_id}}
-        - no authentication event server dead action authorize voice 
-        - no authentication event server alive action reinitialize        
-        - no authentication host-mode multi-auth
-        - no authentication order dot1x mab
-        - no authentication priority dot1x mab        
-        - no authentication port-control auto
-        - no authentication periodic
-        - no authentication timer reauthenticate server
-        - no authentication timer inactivity server
-        - no authentication violation restrict
-        - no mab
-        - no dot1x pae authenticator
-        - no dot1x timeout tx-period
-        - no dot1x max-reauth-req 1        
+           
         parents: interface range {{port_range_1}}
         
     - name: Pause for 1 minute to allow ports to finish
