@@ -9,7 +9,7 @@
         lines:
         - no authentication control-direction in 
         - no authentication event fail action next-method
-      parents: interface range "{{port_range_1}}"
+        parents: interface range "{{port_range_1}}"
         
     - name: Pause for 1 minute to allow ports to finish
       ansible.builtin.pause:
