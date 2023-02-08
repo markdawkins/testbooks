@@ -18,9 +18,9 @@
         - no authentication timer inactivity server
         - no authentication violation restrict
         - no mab
-        - no dot1x pae authenticator
-        - no dot1x timeout tx-period
-        - no dot1x max-reauth-req 1     
+        - no dot1X pae authenticator
+        - no dot1X timeout tx-period
+        - no dot1X max-reauth-req 1     
         # - no authentication event server dead action reinitialize vlan{{vlan_id}}
         parents: interface range {{port_range_1}}
         
