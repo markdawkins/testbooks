@@ -1,0 +1,43 @@
+---
+- name: Phone Port reset   
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    ---
+- name: Enable ISE on a  range of ports  
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Replace  ISE on 1st group of ports 
+      ios_config:
+        lines:
+        - default 
+        parents: interface range {{port_range_1}}    
+    - name: Update work config 
+      ios_config:
+        lines:
+        - switchport mode access
+        - switchport access vlan {{vlan_number}}
+        - switch port voice vlan  {{voice_vlan_number}}
+        - authentication control-direction in 
+        - authentication event fail action next-method
+        - authentication event server dead action authorize voice 
+        - authentication event server alive action reinitialize        
+        - authentication host-mode multi-auth
+        - authentication order dot1x mab
+        - authentication priority dot1x mab        
+        - authentication port-control auto
+        - authentication periodic
+        - authentication timer reauthenticate server
+        - authentication timer inactivity server
+        - authentication violation restrict
+        - mab
+        - dot1x pae authenticator
+        - dot1x timeout tx-period 7
+        - dot1x max-reauth-req 1
+        - spanning-tree portfast
+        # - authentication event server dead action reinitialize vlan {{vlan_id}}
+        
+        parents: interface range {{port_range_1}}
