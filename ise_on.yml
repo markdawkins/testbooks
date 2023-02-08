@@ -21,9 +21,9 @@
         - authentication timer inactivity server
         - authentication violation restrict
         - mab
-        - dot1x pae authenticator
-        - dot1x timeout tx-period
-        - dot1x max-reauth-req 1
+        - dot1X pae authenticator
+        - dot1X timeout tx-period
+        - dot1X max-reauth-req 1
         parents: interface range {{port_range_1}}
         
     - name: Pause for 1 minute to allow ports to finish
