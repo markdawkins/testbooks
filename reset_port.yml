@@ -39,3 +39,9 @@
         # - authentication event server dead action reinitialize vlan {{vlan_id}}
         
         parents: interface range {{port_range_1}}
+
+    - name: save running to startup when modified
+      ios_config:
+        save_when: modified
+
+
