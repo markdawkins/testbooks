@@ -4,7 +4,7 @@
   gather_facts: false
   connection: local
   tasks:
-    - name: Enable ISE on a  range of ports  
+    - name: default interfaces to default configuration 
       ios_config:
         lines:
         - default interface {{port_range_1}} 
