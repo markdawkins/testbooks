@@ -30,6 +30,6 @@
       ansible.builtin.pause:
         minutes: 1       
 
-   - name: save running to startup when modified
+    - name: save running to startup when modified
       ios_config:
         save_when: modified
