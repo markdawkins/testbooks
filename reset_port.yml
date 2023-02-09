@@ -20,7 +20,7 @@
         lines:
         - switchport mode access
         - switchport access vlan {{vlan_id}}
-        - switch port voice vlan  {{voice_vlan_id}
+        - switch port voice vlan  {{voice_vlan_id}}
         - authentication control-direction in 
         - authentication event fail action next-method
         - authentication event server dead action authorize voice 
