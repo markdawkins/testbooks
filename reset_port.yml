@@ -7,10 +7,10 @@
     - name: Enable ISE on a  range of ports  
       ios_config:
         lines:
-        # - default 
-        - description test1
-        parents: interface range {{port_range_1}}    
-    - name: Update work config 
+        - default interface {{port_range_1}} 
+        # - description test1
+        # parents: interface range {{port_range_1}}    
+    - name: Update port config  with security and vlan informaton
       ios_config:
         lines:
         - switchport mode access
