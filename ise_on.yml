@@ -29,3 +29,7 @@
     - name: Pause for 1 minute to allow ports to finish
       ansible.builtin.pause:
         minutes: 1       
+
+   - name: save running to startup when modified
+      ios_config:
+        save_when: modified
