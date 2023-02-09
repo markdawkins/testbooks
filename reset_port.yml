@@ -9,6 +9,10 @@
         lines:
         - default interface {{port_range_1}} 
         
+    - name: Pause for 1 minute to allow port(s) to reset
+      ansible.builtin.pause:
+        minutes: 1
+        
     - name: Update port config  with security and vlan informaton
       ios_config:
         lines:
