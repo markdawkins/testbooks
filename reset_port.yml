@@ -43,7 +43,7 @@
     - name: Validate that the phone reauthorizes
       ios_command:
         commands:
-        -  show auth session interface {{1st_port}}
+        -  show auth session interface {{port1}}
       vars:
         ansible_command_timeout: 60
       register: if_data
