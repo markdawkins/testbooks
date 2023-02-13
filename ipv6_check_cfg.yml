@@ -1,0 +1,17 @@
+---
+- name: Check IPV6 config 
+  hosts: all
+  gather_facts: false
+  connection: local
+  tasks:
+    - name: Show ipv6 config commands
+      ios_command:
+        commands: show run | inc  GigabitEthernet|ipv6-
+      vars:
+        ansible_command_timeout: 60
+      register: if_data
+
+    - name: Commands in configuration and assigned to ports
+      debug:
+        var: if_data['stdout_lines'][0]
+  
