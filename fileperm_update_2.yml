@@ -92,7 +92,41 @@
         recurse: yes
         owner: "mark"
         group: "mark"
-        mode: '0777'   
+        mode: '0777'  
+        
+    - name: check permission folder 11
+      ansible.builtin.file:
+        path: "/media/VOL3/VIDS11/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'  
+    - name: check permission folder 12
+      ansible.builtin.file:
+        path: "/media/VOL3/VIDS12/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'  -
+    - name: check permission folder 13
+      ansible.builtin.file:
+        path: "/media/VOL3/VIDS13/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'  
+        
+    - name: check permission folder 14
+      ansible.builtin.file:
+        path: "/media/VOL3/VIDS14/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'       
     
     
         
