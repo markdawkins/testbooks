@@ -83,7 +83,7 @@
         var: if_data4['stdout_lines'][0] 
        
     
-  handlers:
+  #handlers:
     - name: Send email notification
       mail:
         to: "mark.dawkins@gmail.com"
