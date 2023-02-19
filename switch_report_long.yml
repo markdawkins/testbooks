@@ -95,22 +95,7 @@
     #  debug:
     #    var: if_data4['stdout_lines'][0] 
     
-    - name: Add email notification
-      notification_template:
-        name: TEST_Notification
-        notification_type: email
-        notification_configuration:
-          username: netconexxions
-          password: marcos01
-          sender: netconexxions@gmail.com
-          recipients:
-            - mark.dawkins@gmail.com
-          host: smtp.gmail.com
-          port: 25
-          use_tls: no
-          use_ssl: no
-        state: present
-        controller_config_file: "~/tower_cli.cfg"  
+     
         
     #- name: Sending an e-mail using Gmail SMTP servers
     #  community.general.mail:
@@ -123,5 +108,21 @@
     #    body: System {{ ansible_hostname }} has been successfully provisioned.
     #  delegate_to: localhost    
     
+    #- name: Add email notification
+    #  notification_template:
+    #    name: TEST_Notification
+    #    notification_type: email
+    #    notification_configuration:
+    #      username: netconexxions
+    #      password: <password>
+    #      sender: netconexxions@gmail.com
+    #      recipients:
+    #        - mark.dawkins@gmail.com
+    #      host: smtp.gmail.com
+    #      port: 25
+    #      use_tls: no
+    #      use_ssl: no
+    #    state: present
+    #    controller_config_file: "~/tower_cli.cfg
     
 
