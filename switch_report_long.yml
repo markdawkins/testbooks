@@ -81,17 +81,14 @@
     - name: Output 7
       debug:
         var: if_data4['stdout_lines'][0] 
-        
-    - name: Sending an e-mail using Legacy SSL to the remote machine
-      community.general.mail:
-        host: localhost
-        port: 25
-        to: John Smith <john.smith@example.com>
-        subject: Ansible-report
-        body: System {{ ansible_hostname }} has been successfully provisioned.
-        secure: always
+       
     
-   
+  handlers:
+    - name: Send email notification
+      mail:
+        to: "recipient@example.com"
+        subject: "Tasks completed"
+        body: "The following tasks have been completed: Task 1, Task 2, Task 3"   
         
     
     
