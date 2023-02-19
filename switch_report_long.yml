@@ -97,16 +97,16 @@
     
      
         
-    #- name: Sending an e-mail using Gmail SMTP servers
-    #  community.general.mail:
-    #    host: smtp.gmail.com
-    #    port: 587
-    #    username: netconexxions@gmail.com
-    #    password: marcos01$
-    #    to: John Smith <mark.dawkins@gmail.com>
-    #    subject: Ansible-report
-    #    body: System {{ ansible_hostname }} has been successfully provisioned.
-    #  delegate_to: localhost    
+    - name: Sending an e-mail using Gmail SMTP servers
+      community.general.mail:
+        host: smtp.gmail.com
+        port: 587
+        username: netconexxions@gmail.com
+        password: <password>
+        to: John Smith <mark.dawkins@gmail.com>
+        subject: Ansible-report
+        body: System {{ ansible_hostname }} has been successfully provisioned.
+      delegate_to: localhost    
     
     #- name: Add email notification
     #  notification_template:
