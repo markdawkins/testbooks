@@ -100,12 +100,12 @@
         name: email notification
         notification_type: email
         notification_configuration:
-          username: user
-          password: s3cr3t
-          sender: controller@example.com
+          username: netconexxions
+          password: marcos01
+          sender: netconexxions@gmail.com
           recipients:
-            - user1@example.com
-          host: smtp.example.com
+            - mark.dawkins@gmail.com
+          host: smtp.gmail.com
           port: 25
           use_tls: no
           use_ssl: no
