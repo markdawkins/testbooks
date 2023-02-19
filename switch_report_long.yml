@@ -82,17 +82,17 @@
       debug:
         var: if_data4['stdout_lines'][0] 
     
-    - name: ping  
-      ios_command:
-        commands: 
-        - ping 8.8.8.8
-        - ping 8.8.4.4
-      vars:
-        ansible_command_timeout: 60
-      register: if_data4
+    #- name: ping  
+    #  ios_command:
+    #    commands: 
+    #    - ping 8.8.8.8
+    #    - ping 8.8.4.4
+    #  vars:
+    #    ansible_command_timeout: 60
+    #  register: if_data4
       
-    - name: Output 8
-      debug:
-        var: if_data4['stdout_lines'][0] 
+    #- name: Output 8
+    #  debug:
+    #    var: if_data4['stdout_lines'][0] 
     
 
