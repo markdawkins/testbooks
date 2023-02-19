@@ -97,7 +97,7 @@
     
     - name: Add email notification
       notification_template:
-        name: email notification
+        name: TEST_Notification
         notification_type: email
         notification_configuration:
           username: netconexxions
