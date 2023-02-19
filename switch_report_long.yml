@@ -86,7 +86,7 @@
   handlers:
     - name: Send email notification
       mail:
-        to: "recipient@example.com"
+        to: "mark.dawkins@gmail.com"
         subject: "Tasks completed"
         body: "The following tasks have been completed: Task 1, Task 2, Task 3"   
         
