@@ -40,6 +40,19 @@
         
         parents: interface range {{port_range_1}}
         
+    - name: show run interface 
+      ios_command:
+        commands: 
+        - show run interface {{port1}}
+      vars:
+        ansible_command_timeout: 60
+      register: if_data
+
+    - name: Output1
+      debug:
+        var: if_data['stdout_lines'][0]    
+    
+    
     - name: Validate that the phone reauthorizes
       ios_command:
         commands:
@@ -48,7 +61,7 @@
         ansible_command_timeout: 60
       register: if_data
 
-    - name: Interfaces output
+    - name: Auth session output
       debug:
         var: if_data['stdout_lines'][0]    
 
