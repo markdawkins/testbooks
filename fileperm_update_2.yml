@@ -39,7 +39,7 @@
         mode: '0777'   
     - name: check permission folder 4
       ansible.builtin.file:
-        path: "/media/mark/VOL2/VIDS4/"
+        path: "/media/mark/VOL3/VIDS4/"
         state: directory
         recurse: yes
         owner: "mark"
@@ -79,7 +79,7 @@
         mode: '0777'   
     - name: check permission folder 9
       ansible.builtin.file:
-        path: "/media/VOL2/VIDS9/"
+        path: "/media/VOL3/VIDS9/"
         state: directory
         recurse: yes
         owner: "mark"
@@ -87,7 +87,7 @@
         mode: '0777'  
     - name: check permission folder 10
       ansible.builtin.file:
-        path: "/media/mark/VOL2/VIDS10/"
+        path: "/media/mark/VOL3/VIDS10/"
         state: directory
         recurse: yes
         owner: "mark"
