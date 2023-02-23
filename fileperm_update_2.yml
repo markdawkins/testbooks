@@ -79,7 +79,7 @@
         mode: '0777'   
     - name: check permission folder 9
       ansible.builtin.file:
-        path: "/media/VOL3/VIDS9/"
+        path: "/media/mark/VOL3/VIDS9/"
         state: directory
         recurse: yes
         owner: "mark"
