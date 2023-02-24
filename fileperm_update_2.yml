@@ -126,7 +126,19 @@
         recurse: yes
         owner: "mark"
         group: "mark"
-        mode: '0777'       
+        mode: '0777' 
+        
+    - name: check permission folder 14
+      ansible.builtin.file:
+        path: "/media/mark/VOL3/QBIT_DOWNLOADS/"
+        state: directory
+        recurse: yes
+        owner: "mark"
+        group: "mark"
+        mode: '0777'    
+        
+
+        
     
     
         
