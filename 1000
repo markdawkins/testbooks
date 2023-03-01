@@ -1,0 +1,11 @@
+[1000]
+192.168.1.151
+192.168.1.152
+192.168.1.153
+192.168.1.154
+192.168.1.155
+
+[1000:vars]
+ansible_become=yes
+ansible_become_method=enable
+ansible_network_os=cisco.ios.ios
