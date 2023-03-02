@@ -7,8 +7,8 @@
     - name: Create new VLAN 
       cisco.ios.ios_vlans:
         config:
-        - name: "{{vlan_name}}"
-          vlan_id: "{{vlan_id}}"
+        - name: CHECK
+          vlan_id: 80
           state: active
       
     - name: save running to startup when modified
