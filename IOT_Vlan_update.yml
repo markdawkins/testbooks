@@ -13,7 +13,7 @@
         - name: "{{ vlan_name }}"
           vlan_id: "{{ vlan_id }}"
           state: active
-      #register: vlan_config
+      register: vlan_config
       
     - name: Save config to switch
       ios_command:
