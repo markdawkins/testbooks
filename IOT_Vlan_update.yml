@@ -1,0 +1,21 @@
+---
+- name: Create VLAN on Cisco switch
+  hosts: all
+  gather_facts: False
+  connection: network_cli
+  vars:
+    vlan_id: 24
+    vlan_name: PAGIOT
+  tasks:
+    - name: Configure VLAN on switch
+      cisco.ios.ios_vlans:
+        config:
+        - name: "{{ vlan_name }}"
+          vlan_id: "{{ vlan_id }}"
+          state: active
+      #register: vlan_config
+      
+    - name: Save config to switch
+      ios_command:
+        commands:
+          - "write memory"
