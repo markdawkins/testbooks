@@ -1,0 +1,18 @@
+---
+- name: PAGGuest and IOT vlan search
+  hosts: all
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: Verify current config
+      ios_command:
+        commands:
+        -  show run | inc vlan 23|vlan 24|PAGIOT |PAGGuest |hostname
+      vars:
+        ansible_command_timeout: 60
+      register: if_data
+
+    - name: show run output
+      debug:
+        var: if_data['stdout_lines'][0] 
