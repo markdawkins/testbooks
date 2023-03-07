@@ -1,0 +1,7 @@
+##### Create new ansible.cfg file  using the command in step 5 #####
+
+ansible-config init --disabled > ansible.cfg ## This option did not work  to create .cfg file####
+ansible-config dump --disabled > ansible.cfg  ## This option did not to create ab  cfg file ####
+ansible-config dump  > ansible.cfg  ## This option worked to create an initial .cfg file. Needed this command at top of the file [ANSIBLE_SETTINGS]
+
+ssh_args = -o HostKeyAlgorithms=ssh-rsa  < used this to try and update ssh Hosk Key algorithms allowed. 
