@@ -1,0 +1,11 @@
+Must uses this header at the top of the ansible.cfg file 
+[ANSIBLE_SETTINGS]
+
+I used this command to create an ansible.cfg file. 
+ansible-config dump  > ansible.cfg
+
+####These 3 commands did not work###
+ansible-config init --disabled -t all > ansible.cfg
+ansible-config dump --disabled > ansible.cfg
+ansible-config init --disabled > ansible.cfg
+
