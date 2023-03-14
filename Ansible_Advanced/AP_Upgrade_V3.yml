@@ -1,0 +1,32 @@
+---
+- name: Download new AP image
+  hosts: access_point
+  #connection: network_cli
+  gather_facts: no
+  vars:
+    apimage: "ciscowireless_ap-image.bin"  # replace with your AP image filename
+  tasks:
+    - name: Log into access point
+      ios_command:
+        provider:
+          host: "{{ inventory_hostname }}"
+          username: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
+        commands:
+          - "enable"   # i think this shuld be just enable no quotes
+          - "{{ enable_password | mandatory }}"
+        authorize: yes
+        auth_pass: "{{ enable_password | mandatory }}"  # create a variable template
+      register: enable_login
+
+    - name: Download new AP image
+      ios_command:
+        provider:
+          host: "{{ inventory_hostname }}"
+          username: "{{ ansible_user }}" # create a variable template
+          password: "{{ ansible_password }}" # create a variable template
+        commands:
+          - "archive download-sw /no-reload tftp://192.168.1.12/{{ apimage }}% "
+        authorize: yes
+        auth_pass: "{{ enable_password | mandatory }}"
+      when: enable_login is succeeded
