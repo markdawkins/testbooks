@@ -1,0 +1,24 @@
+- name: Update Cisco Access Point software
+  hosts: cisco_ap
+  gather_facts: no
+
+  vars:
+    ap_username: anonymous
+    ap_password: 
+
+  tasks:
+    - name: Log in to Cisco Access Point
+      ios_command:
+        provider: "{{ provider }}"
+        commands:
+          - "enable"
+          - "configure terminal"
+          - "username {{ ap_username }} privilege 15 password {{ ap_password }}"
+      register: login_output
+
+    - name: Download software from SFTP server
+      ios_command:
+        provider: "{{ provider }}"
+        commands:
+          - "archive download-sw /no-reload sftp://192.168.2.167/ap1g7"
+      when: "'ERROR' not in login_output.stdout_lines[-1]"
